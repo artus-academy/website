@@ -37,7 +37,7 @@ const links = [
     label: "Courses",
     components: [
       {
-        label: "Full Stack Web-Development",
+        label: "Full Stack Web Development",
         href: "/courses/web-development",
         description:
           "Be a professional web developer, learn technologies from the basic of web to React, Java Spring boot and MySql. A fully covered course on how to become a professional web application development.",
@@ -65,7 +65,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur px-2 sm:px-6 md:px-10">
-      <div className="container flex h-16 items-center justify-between min-w-full">
+      <div className="flex h-16 items-center justify-between w-full">
         <Link href="/" className="flex items-center gap-x-2 font-bold text-xl">
           <Image
             src="/logo.png"
@@ -150,13 +150,13 @@ export default function Navbar() {
                         {l.label}
                         <ChevronDown className="size-5" />
                       </AccordionTrigger>
-                      <AccordionContent className="flex flex-col gap-4 text-balance pl-3">
+                      <AccordionContent className="flex flex-col gap-3 text-balance pl-3 mt-3">
                         {l.components.map((c) => (
                           <Link
                             key={c.href}
                             href={c.href}
                             onClick={() => setOpen(false)}
-                            className="text-lg font-medium hover:text-primary"
+                            className="font-medium hover:text-primary"
                           >
                             {c.label}
                           </Link>
