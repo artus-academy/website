@@ -2,6 +2,7 @@ import MotionSection from "@/components/MotionSection";
 import SectionHeading from "@/components/SectionHeading";
 import FeatureCard from "@/components/FeatureCard";
 import CTA from "@/components/CTA";
+import YouTubeSection from "@/components/YoutubeSection";
 
 export default function HomePage() {
   return (
@@ -48,6 +49,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <YouTubeSection />
 
       {/* Features */}
       <MotionSection className="container py-12 md:py-16">

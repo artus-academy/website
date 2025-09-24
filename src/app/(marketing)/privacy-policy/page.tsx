@@ -93,7 +93,7 @@ export default function PrivacyPolicyPage() {
           </Li>
           <Li>
             <B>Company Partners</B>: Third-party companies or organization we
-            collaborate with to offer jobs and carrer improvements.
+            collaborate with to offer jobs and career improvements.
           </Li>
           <Li>
             <B>Legal and Regulatory Authorities</B>: If required by law, we may
