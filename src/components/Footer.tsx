@@ -180,8 +180,11 @@ export default function Footer() {
             <Link href="/privacy-policy" className="hover:text-primary">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:text-primary">
+            <Link href="/terms-and-conditions" className="hover:text-primary">
               Terms & Conditions
+            </Link>
+            <Link href="/refund-policy" className="hover:text-primary">
+              Refund Policy
             </Link>
           </div>
         </div>

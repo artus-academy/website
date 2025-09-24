@@ -1,3 +1,4 @@
+import { B, H3, Li, P, Section, Ul } from "@/components/Para";
 import Link from "next/link";
 
 export default function PrivacyPolicyPage() {
@@ -187,40 +188,4 @@ export default function PrivacyPolicyPage() {
       </Section>
     </div>
   );
-}
-
-function Section({ children }: { children: React.ReactNode }) {
-  return <section className="mb-8">{children}</section>;
-}
-
-function P({ children }: { children: React.ReactNode }) {
-  return (
-    <p className="mb-4 text-base leading-relaxed text-muted-foreground">
-      {children}
-    </p>
-  );
-}
-
-function Ul({ children }: { children: React.ReactNode }) {
-  return <ul className="list-disc pl-6 mb-4 space-y-2">{children}</ul>;
-}
-
-function Li({ children }: { children: React.ReactNode }) {
-  return (
-    <li className="text-base leading-relaxed text-muted-foreground">
-      {children}
-    </li>
-  );
-}
-
-function H3({ children }: { children: React.ReactNode }) {
-  return (
-    <h3 className="text-lg font-semibold tracking-tight text-foreground mb-3">
-      {children}
-    </h3>
-  );
-}
-
-function B({ children }: { children: React.ReactNode }) {
-  return <b className="font-medium dark:text-white text-black">{children}</b>;
 }
