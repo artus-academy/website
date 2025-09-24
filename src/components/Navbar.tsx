@@ -21,13 +21,14 @@ import {
 import { useState } from "react";
 import Image from "next/image";
 import { Raleway } from "next/font/google";
-import { ArrowDown, ChevronDown, ChevronRight, Menu } from "lucide-react";
+import { ChevronDown, Menu } from "lucide-react";
 import { Accordion } from "./ui/accordion";
 import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@radix-ui/react-accordion";
+import ThemeToggle from "./ThemeToggle";
 
 const links = [
   { href: "/about", label: "About" },
@@ -55,7 +56,7 @@ const links = [
 
 export const raleway = Raleway({
   subsets: ["latin"],
-  weight: ["700"], // Bold
+  weight: ["700"],
   display: "swap",
 });
 
@@ -67,8 +68,9 @@ export default function Navbar() {
       <div className="container flex h-16 items-center justify-between min-w-full">
         <Link href="/" className="flex items-center gap-x-2 font-bold text-xl">
           <Image
-            src="/logo.png" // path is relative to /public
+            src="/logo.png"
             alt="ArtUs Academy logo"
+            className="dark:invert-100 dark:saturate-0 dark:brightness-200"
             width={50}
             height={50}
             priority
@@ -116,15 +118,19 @@ export default function Navbar() {
           <Button asChild>
             <Link href="/admissions">Apply</Link>
           </Button>
+          <ThemeToggle />
         </NavigationMenu>
 
         {/* Mobile nav */}
         <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger asChild>
-            <Button variant="outline" size="icon" className="md:hidden">
-              <Menu />
-            </Button>
-          </SheetTrigger>
+          <div className="flex items-center gap-x-2 md:hidden">
+            <ThemeToggle />
+            <SheetTrigger asChild>
+              <Button variant="outline" size="icon" className="md:hidden">
+                <Menu />
+              </Button>
+            </SheetTrigger>
+          </div>
           <SheetContent side="right" className="w-64 px-3">
             <SheetHeader className="sr-only">
               <SheetTitle>Navigation Menu</SheetTitle>
