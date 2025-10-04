@@ -10,6 +10,7 @@ import {
   Copyright,
   MapPin,
   Phone,
+  Github,
 } from "lucide-react";
 import { motion, type Variants } from "framer-motion";
 import { Raleway } from "next/font/google";
@@ -22,6 +23,11 @@ const pages = [
 ];
 
 const socials = [
+  {
+    icon: Github,
+    href: "https://www.github.com/artus-academy/",
+    label: "Github",
+  },
   {
     icon: Instagram,
     href: "https://www.instagram.com/artus_academy/",

@@ -18,10 +18,10 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import Image from "next/image";
 import { Raleway } from "next/font/google";
-import { ChevronDown, Menu } from "lucide-react";
+import { ChevronDown, Globe, Megaphone, Menu } from "lucide-react";
 import { Accordion } from "./ui/accordion";
 import {
   AccordionContent,
@@ -38,12 +38,14 @@ const links = [
     components: [
       {
         label: "Full Stack Web Development",
+        icon: <Globe className="size-10 text-primary" />,
         href: "/courses/web-development",
         description:
           "Be a professional web developer, learn technologies from the basic of web to React, Java Spring boot and MySql. A fully covered course on how to become a professional web application development.",
       },
       {
         label: "Digital Marketing",
+        icon: <Megaphone className="size-10 text-primary" />,
         href: "/courses/digital-marketing",
         description:
           "Learn how to market a product to success! Learn different tools of SEO, PPC and other strategies and become a professional digital marketer.",
@@ -103,9 +105,14 @@ export default function Navbar() {
                 )}
 
                 <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-2 md:grid-cols-2 ">
+                  <ul className="grid w-[400px] lg:w-[500px] gap-2 md:grid-cols-2 ">
                     {l.components?.map((c) => (
-                      <ListItem key={c.label} title={c.label} href={c.href}>
+                      <ListItem
+                        key={c.label}
+                        title={c.label}
+                        href={c.href}
+                        icon={c.icon}
+                      >
                         {c.description}
                       </ListItem>
                     ))}
@@ -190,16 +197,22 @@ function ListItem({
   title,
   children,
   href,
+  icon,
   ...props
-}: React.ComponentPropsWithoutRef<"li"> & { href: string }) {
+}: React.ComponentPropsWithoutRef<"li"> & { href: string; icon: ReactNode }) {
   return (
     <li {...props}>
       <NavigationMenuLink asChild>
         <Link href={href}>
-          <div className="text-sm leading-none font-medium">{title}</div>
-          <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
-            {children}
-          </p>
+          <div className="flex gap-x-2">
+            <div className="flex items-center justify-center">{icon}</div>
+            <div>
+              <div className="text-sm leading-none font-medium">{title}</div>
+              <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
+                {children}
+              </p>
+            </div>
+          </div>
         </Link>
       </NavigationMenuLink>
     </li>
