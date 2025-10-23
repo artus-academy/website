@@ -2,8 +2,8 @@
 
 import { motion, Variants } from "framer-motion";
 import SectionHeading from "@/components/SectionHeading";
-import AuroraGradient from "./AuroraGradient";
-import WhoIsThisFor from "./landing/WhoIsThisFor";
+import AuroraGradient from "@/components/AuroraGradient";
+import WhoIsThisFor from "@/components/landing/WhoIsThisFor";
 
 const videos = ["7CoUFMO5qiM", "MPVDZ8WWT_4", "TDdo4cfWXQ8", "98BQOedbP_c"];
 

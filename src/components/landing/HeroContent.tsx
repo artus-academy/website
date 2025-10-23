@@ -8,9 +8,9 @@ import {
   MotionConfig,
   Variants,
 } from "framer-motion";
-import AuroraGradient from "./AuroraGradient";
-import ContactForm from "./landing/ContactForm";
-import { Button } from "./ui/button";
+import AuroraGradient from "../AuroraGradient";
+import ContactForm from "./ContactForm";
+import { Button } from "../ui/button";
 import Link from "next/link";
 
 export function HeroContent() {

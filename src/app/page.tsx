@@ -2,8 +2,10 @@ import MotionSection from "@/components/MotionSection";
 import SectionHeading from "@/components/SectionHeading";
 import FeatureCard from "@/components/FeatureCard";
 import CTA from "@/components/CTA";
-import YouTubeSection from "@/components/YoutubeSection";
-import { HeroContent } from "@/components/HeroContent";
+import YouTubeSection from "@/components/landing/YoutubeSection";
+import { HeroContent } from "@/components/landing/HeroContent";
+import FAQSection from "@/components/landing/FaqSection";
+import MentorSection from "@/components/landing/MentorSection";
 
 export default function HomePage() {
   return (
@@ -11,6 +13,8 @@ export default function HomePage() {
       <HeroContent />
 
       <YouTubeSection />
+
+      <MentorSection />
 
       {/* Features */}
       <MotionSection className="container py-12 md:py-16">
@@ -35,6 +39,8 @@ export default function HomePage() {
       <section className="container py-16">
         <CTA />
       </section>
+
+      <FAQSection />
     </>
   );
 }
