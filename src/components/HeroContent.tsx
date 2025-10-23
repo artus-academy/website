@@ -9,6 +9,9 @@ import {
   Variants,
 } from "framer-motion";
 import AuroraGradient from "./AuroraGradient";
+import ContactForm from "./landing/ContactForm";
+import { Button } from "./ui/button";
+import Link from "next/link";
 
 export function HeroContent() {
   const prefersReduced = useReducedMotion();
@@ -68,29 +71,24 @@ export function HeroContent() {
             </motion.p>
 
             <motion.div variants={fadeUp} className="mt-6 flex gap-3">
-              {/* Magnetic primary button */}
-              <motion.a
-                variants={fadeUp}
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.98 }}
-                className="btn-ghost flex items-center gap-2"
-                href="/contact"
-              >
-                <span className="relative z-10 flex items-center gap-2">
+              <Link href="/contact">
+                <Button
+                  className="relative z-10 flex items-center gap-2"
+                  variant="outline"
+                >
                   Apply Now <ShieldCheck size={16} />
-                </span>
-              </motion.a>
+                </Button>
+              </Link>
 
-              <motion.a
-                variants={fadeUp}
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.98 }}
-                className="btn-ghost flex items-center gap-2"
-                href="/courses"
-              >
-                <Play size={16} />
-                View Courses
-              </motion.a>
+              <Link href="/courses">
+                <Button
+                  className="relative z-10 flex items-center gap-2"
+                  variant="outline"
+                >
+                  <Play size={16} />
+                  View Courses
+                </Button>
+              </Link>
             </motion.div>
 
             <motion.div
@@ -105,7 +103,15 @@ export function HeroContent() {
           </motion.div>
 
           {/* === RIGHT === */}
-          <div className="relative z-10"></div>
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.4 }}
+            className="relative z-10 md:pl-16 flex-1 flex items-center justify-center h-full"
+          >
+            <ContactForm />
+          </motion.div>
         </div>
       </section>
     </MotionConfig>
