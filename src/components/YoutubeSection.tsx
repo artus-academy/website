@@ -2,8 +2,10 @@
 
 import { motion, Variants } from "framer-motion";
 import SectionHeading from "@/components/SectionHeading";
+import AuroraGradient from "./AuroraGradient";
+import WhoIsThisFor from "./landing/WhoIsThisFor";
 
-const videos = ["7CoUFMO5qiM", "MPVDZ8WWT_4", "TDdo4cfWXQ8"];
+const videos = ["7CoUFMO5qiM", "MPVDZ8WWT_4", "TDdo4cfWXQ8", "98BQOedbP_c"];
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -30,39 +32,43 @@ const itemVariants: Variants = {
 export default function YouTubeSection() {
   return (
     <motion.section
-      className="container mx-auto px-5 py-16"
+      className="relative w-full"
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
     >
-      <SectionHeading
-        title="From Our YouTube Channel"
-        subtitle="Learn more about Web Development & Digital Marketing with our tutorials and tips"
-      />
+      <WhoIsThisFor />
+      <AuroraGradient className="absolute inset-0 rotate-180" />
+      <div className="px-5 py-16 mx-auto flex flex-col items-center relative -translate-y-12">
+        <SectionHeading
+          title="From Our YouTube Channel"
+          subtitle="Learn more about Web Development & Digital Marketing with our tutorials and tips"
+        />
 
-      <motion.div
-        className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
-        variants={containerVariants}
-      >
-        {videos.map((id) => (
-          <motion.div
-            key={id}
-            className="aspect-video rounded-xl overflow-hidden shadow-sm border border-slate-200"
-            variants={itemVariants}
-          >
-            <iframe
-              width="100%"
-              height="100%"
-              src={`https://www.youtube.com/embed/${id}`}
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
-          </motion.div>
-        ))}
-      </motion.div>
+        <motion.div
+          className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-[80rem] w-full"
+          variants={containerVariants}
+        >
+          {videos.map((id) => (
+            <motion.div
+              key={id}
+              className="aspect-video rounded-xl overflow-hidden shadow-sm border border-slate-200"
+              variants={itemVariants}
+            >
+              <iframe
+                width="100%"
+                height="100%"
+                src={`https://www.youtube.com/embed/${id}`}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
     </motion.section>
   );
 }

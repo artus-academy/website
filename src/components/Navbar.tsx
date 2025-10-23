@@ -31,6 +31,7 @@ import {
 import ThemeToggle from "./ThemeToggle";
 
 const links = [
+  { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   {
     href: "/courses",
@@ -52,7 +53,6 @@ const links = [
       },
     ],
   },
-  { href: "/admissions", label: "Admissions" },
   { href: "/contact", label: "Contact" },
 ];
 
