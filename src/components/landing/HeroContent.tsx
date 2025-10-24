@@ -8,7 +8,6 @@ import {
   MotionConfig,
   Variants,
 } from "framer-motion";
-import AuroraGradient from "../AuroraGradient";
 import ContactForm from "./ContactForm";
 import { Button } from "../ui/button";
 import Link from "next/link";
@@ -34,9 +33,23 @@ export function HeroContent() {
 
   return (
     <MotionConfig reducedMotion={prefersReduced ? "always" : "never"}>
-      <section className="relative overflow-hidden pt-10 pb-24 md:pt-12 md:pb-32 px-5 flex justify-center">
-        <AuroraGradient className="h-full absolute inset-0" />
-        <div className="max-w-[80rem] w-full grid md:grid-cols-2 gap-10 items-center">
+      <section className="relative overflow-hidden pt-10 pb-12 md:pt-12 md:pb-16 px-5 flex justify-center">
+        <div className="absolute inset-0">
+          <motion.div
+            className="absolute w-96 h-96 bg-primary/30 blur-3xl rounded-full z-0"
+            animate={{
+              x: [0, 100, -100, 0],
+              y: [0, -50, 50, 0],
+            }}
+            transition={{
+              duration: 15,
+              ease: "easeInOut",
+              repeat: Infinity,
+            }}
+          />
+        </div>
+        {/* <AuroraGradient className="h-full absolute inset-0" /> */}
+        <div className="max-w-[80rem] w-full grid md:grid-cols-2 gap-10 items-center z-10">
           {/* === LEFT === */}
 
           <motion.div

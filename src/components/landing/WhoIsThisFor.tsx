@@ -1,7 +1,7 @@
 export default function WhoIsThisFor() {
   return (
     <div className="w-full flex justify-center px-5 -translate-y-12 relative z-10">
-      <div className="bg-white/80 dark:bg-black/80 shadow rounded gap-x-2 px-5 py-4 w-full max-w-xs md:max-w-2xl flex flex-col justify-around md:flex-row">
+      <div className="bg-white/80 dark:bg-black/80 shadow rounded gap-x-2 px-5 py-4 w-full max-w-xs md:max-w-2xl flex flex-col justify-around md:flex-row border">
         <Box
           question="Who is this for?"
           answer={

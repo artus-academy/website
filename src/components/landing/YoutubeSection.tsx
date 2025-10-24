@@ -2,8 +2,6 @@
 
 import { motion, Variants } from "framer-motion";
 import SectionHeading from "@/components/SectionHeading";
-import AuroraGradient from "@/components/AuroraGradient";
-import WhoIsThisFor from "@/components/landing/WhoIsThisFor";
 
 const videos = ["7CoUFMO5qiM", "MPVDZ8WWT_4", "TDdo4cfWXQ8", "98BQOedbP_c"];
 
@@ -38,8 +36,6 @@ export default function YouTubeSection() {
       viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
     >
-      <WhoIsThisFor />
-      <AuroraGradient className="absolute inset-0 rotate-180" />
       <div className="px-5 py-16 mx-auto flex flex-col items-center relative -translate-y-12 pt-32">
         <SectionHeading
           title="From Our YouTube Channel"

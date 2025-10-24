@@ -6,15 +6,21 @@ import YouTubeSection from "@/components/landing/YoutubeSection";
 import { HeroContent } from "@/components/landing/HeroContent";
 import FAQSection from "@/components/landing/FaqSection";
 import MentorSection from "@/components/landing/MentorSection";
+import AboutSection from "@/components/landing/AboutSection";
+import WhyUsSection from "@/components/landing/WhyUsSection";
 
 export default function HomePage() {
   return (
     <>
       <HeroContent />
 
-      <YouTubeSection />
+      <AboutSection />
 
       <MentorSection />
+
+      <WhyUsSection />
+
+      <YouTubeSection />
 
       {/* Features */}
       <MotionSection className="container py-12 md:py-16">
