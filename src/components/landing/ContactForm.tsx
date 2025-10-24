@@ -5,9 +5,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
-import { Loader2, MailIcon, UserIcon } from "lucide-react";
-
-import { Button } from "../ui/button";
+import { MailIcon, UserIcon } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -40,6 +38,7 @@ import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 import { toast } from "sonner";
 import { Label } from "../ui/label";
 import { sleep } from "@/lib/utils";
+import ButtonLoading from "../ui/button-loading";
 
 const phoneRegex = /^[0-9+\-\s()]{7,15}$/;
 
@@ -49,7 +48,7 @@ const contactSchema = z.object({
   email: z.email("Enter a valid email."),
   phone: z.string().regex(phoneRegex, "Enter a valid phone number."),
   course: z.string().min(1, "Please select a course."),
-  mode: z.enum(Modes, { required_error: "Please select a mode." }),
+  mode: z.enum(Modes),
 });
 
 type ContactFormValues = z.infer<typeof contactSchema>;
@@ -232,20 +231,13 @@ export default function ContactForm() {
 
               {/* Submit */}
               <Field className="pt-4">
-                <Button
+                <ButtonLoading
                   type="submit"
                   className="w-full"
-                  disabled={form.formState.isSubmitting}
+                  loading={form.formState.isSubmitting}
                 >
-                  {form.formState.isSubmitting ? (
-                    <>
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                      Submitting...
-                    </>
-                  ) : (
-                    "Book a Free Class"
-                  )}
-                </Button>
+                  Book a Free Class
+                </ButtonLoading>
                 <FieldDescription className="text-center text-xs">
                   By submitting this form, I have read the{" "}
                   <Link

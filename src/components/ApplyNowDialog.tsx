@@ -37,6 +37,7 @@ import { ScrollArea } from "./ui/scroll-area";
 import Link from "next/link";
 import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
 import { Label } from "./ui/label";
+import ButtonLoading from "./ui/button-loading";
 
 const phoneRegex = /^[0-9+\-\s()]{7,15}$/;
 
@@ -58,7 +59,7 @@ const formSchema = z.object({
   mode: z.string().min(1, "Please select a mode."),
 });
 
-export type ApplyFormValues = z.infer<typeof formSchema>;
+export type ApplyFormValues = z.output<typeof formSchema>;
 
 export function ApplyNowDialog({
   trigger,
@@ -194,6 +195,9 @@ export function ApplyNowDialog({
                           max={80}
                           placeholder="18"
                           {...field}
+                          onChange={(e) =>
+                            field.onChange(e.target.valueAsNumber)
+                          }
                         />
                       </FormControl>
                       <FormMessage />
@@ -214,6 +218,9 @@ export function ApplyNowDialog({
                           max={40}
                           placeholder="0"
                           {...field}
+                          onChange={(e) =>
+                            field.onChange(e.target.valueAsNumber)
+                          }
                         />
                       </FormControl>
                       <FormMessage />
@@ -305,7 +312,12 @@ export function ApplyNowDialog({
                 >
                   Cancel
                 </Button>
-                <Button type="submit">Submit</Button>
+                <ButtonLoading
+                  loading={form.formState.isSubmitting}
+                  type="submit"
+                >
+                  Submit
+                </ButtonLoading>
               </div>
               <div className="text-muted-foreground text-xs justify-center text-center w-full">
                 By submitting the data, I have read the{" "}
