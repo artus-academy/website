@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -52,6 +53,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Toaster richColors />
           <Navbar />
           <main className="min-h-screen">{children}</main>
           <Footer />

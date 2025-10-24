@@ -40,7 +40,7 @@ export default function YouTubeSection() {
     >
       <WhoIsThisFor />
       <AuroraGradient className="absolute inset-0 rotate-180" />
-      <div className="px-5 py-16 mx-auto flex flex-col items-center relative -translate-y-12">
+      <div className="px-5 py-16 mx-auto flex flex-col items-center relative -translate-y-12 pt-32">
         <SectionHeading
           title="From Our YouTube Channel"
           subtitle="Learn more about Web Development & Digital Marketing with our tutorials and tips"

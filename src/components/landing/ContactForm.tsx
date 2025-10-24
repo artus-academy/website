@@ -1,4 +1,12 @@
+"use client";
+
+import * as React from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
+import { Loader2, MailIcon, UserIcon } from "lucide-react";
+
 import { Button } from "../ui/button";
 import {
   Card,
@@ -7,60 +15,255 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card";
-import { Field, FieldDescription, FieldGroup } from "../ui/field";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+} from "../ui/form";
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupInput,
   InputGroupText,
 } from "../ui/input-group";
-import { MailIcon, UserIcon } from "lucide-react";
+import { Field, FieldDescription, FieldGroup } from "../ui/field";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../ui/select";
+import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
+import { toast } from "sonner";
+import { Label } from "../ui/label";
+import { sleep } from "@/lib/utils";
+
+const phoneRegex = /^[0-9+\-\s()]{7,15}$/;
+
+const Modes = ["online", "offline"] as const;
+const contactSchema = z.object({
+  name: z.string().min(2, "Please enter your full name."),
+  email: z.email("Enter a valid email."),
+  phone: z.string().regex(phoneRegex, "Enter a valid phone number."),
+  course: z.string().min(1, "Please select a course."),
+  mode: z.enum(Modes, { required_error: "Please select a mode." }),
+});
+
+type ContactFormValues = z.infer<typeof contactSchema>;
 
 export default function ContactForm() {
+  const form = useForm<ContactFormValues>({
+    resolver: zodResolver(contactSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      course: "",
+      mode: "online",
+    },
+    mode: "onTouched",
+  });
+
+  const submitValues = async (data: ContactFormValues) => {
+    // Example: POST to your API route
+    // await fetch("/api/applications", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify(values),
+    // });
+
+    console.log("Mocking the submission of ", data);
+    await sleep(2000);
+    form.reset();
+  };
+
+  const onSubmit = async (values: ContactFormValues) => {
+    const promise = submitValues(values);
+    toast.promise<void>(() => promise, {
+      loading: "Submitting your form...",
+      success: () => "Successfully booked your free class!",
+      error: "Error",
+    });
+    return await promise;
+  };
+
   return (
     <Card className="h-fit w-full flex-1">
       <CardHeader>
-        <CardTitle>Book You Free Live Class</CardTitle>
+        <CardTitle>Book Your Free Live Class</CardTitle>
         <CardDescription>
-          Just fill your details below and get a class from our top instructors.
+          Just fill in your details below and get a live session from our top
+          instructors.
         </CardDescription>
       </CardHeader>
-      <CardContent className="overflow-y-auto max-h-96">
-        <form>
-          <FieldGroup className="gap-3">
-            <InputGroup>
-              <InputGroupInput type="name" placeholder="Enter your full name" />
-              <InputGroupAddon>
-                <UserIcon />
-              </InputGroupAddon>
-            </InputGroup>
-            <InputGroup>
-              <InputGroupInput
-                type="email"
-                placeholder="Enter your email"
-                required
-              />
-              <InputGroupAddon>
-                <MailIcon />
-              </InputGroupAddon>
-            </InputGroup>
-            <InputGroup>
-              <InputGroupAddon>
-                <InputGroupText>+91</InputGroupText>
-              </InputGroupAddon>
-              <InputGroupInput type="tel" placeholder="Phone Number" />
-            </InputGroup>
 
-            <Field className="pt-4">
-              <Button type="submit">Book A free class</Button>
-              <FieldDescription className="text-center text-xs">
-                By creating an account I have read the{" "}
-                <Link href="/terms-and-conditions">Terms</Link> and{" "}
-                <Link href="/privacy-policy">Privacy policy</Link>
-              </FieldDescription>
-            </Field>
-          </FieldGroup>
-        </form>
+      <CardContent>
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+            <FieldGroup className="gap-4">
+              {/* Full Name */}
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <InputGroup>
+                        <InputGroupInput
+                          placeholder="Enter your full name"
+                          {...field}
+                        />
+                        <InputGroupAddon>
+                          <UserIcon />
+                        </InputGroupAddon>
+                      </InputGroup>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <InputGroup>
+                          <InputGroupInput
+                            type="email"
+                            placeholder="Enter your email"
+                            {...field}
+                          />
+                          <InputGroupAddon>
+                            <MailIcon />
+                          </InputGroupAddon>
+                        </InputGroup>
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="phone"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <InputGroup>
+                          <InputGroupAddon>
+                            <InputGroupText>+91</InputGroupText>
+                          </InputGroupAddon>
+                          <InputGroupInput
+                            type="tel"
+                            placeholder="Phone Number"
+                            {...field}
+                          />
+                        </InputGroup>
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+
+              {/* Course Dropdown */}
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                {/* Mode Radio Group */}
+                <FormField
+                  control={form.control}
+                  name="mode"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <RadioGroup
+                          onValueChange={field.onChange}
+                          defaultValue={field.value}
+                          className="flex gap-6"
+                        >
+                          <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="online" id="online" />
+                            <Label htmlFor="online">Online</Label>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="offline" id="offline" />
+                            <Label htmlFor="offline">Offline</Label>
+                          </div>
+                        </RadioGroup>
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="course"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Select
+                          onValueChange={field.onChange}
+                          defaultValue={field.value}
+                        >
+                          <SelectTrigger className="w-full overflow-hidden text-ellipsis whitespace-nowrap">
+                            <SelectValue placeholder="Select a course" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="fullstack">
+                              Full Stack Web Development (6 Months)
+                            </SelectItem>
+                            <SelectItem value="digital">
+                              Digital Marketing (4 Months)
+                            </SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+
+              {/* Submit */}
+              <Field className="pt-4">
+                <Button
+                  type="submit"
+                  className="w-full"
+                  disabled={form.formState.isSubmitting}
+                >
+                  {form.formState.isSubmitting ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Submitting...
+                    </>
+                  ) : (
+                    "Book a Free Class"
+                  )}
+                </Button>
+                <FieldDescription className="text-center text-xs">
+                  By submitting this form, I have read the{" "}
+                  <Link
+                    href="/terms-and-conditions"
+                    className="hover:text-primary"
+                  >
+                    Terms
+                  </Link>{" "}
+                  and{" "}
+                  <Link href="/privacy-policy" className="hover:text-primary">
+                    Privacy Policy
+                  </Link>
+                  .
+                </FieldDescription>
+              </Field>
+            </FieldGroup>
+          </form>
+        </Form>
       </CardContent>
     </Card>
   );

@@ -34,7 +34,7 @@ export function HeroContent() {
 
   return (
     <MotionConfig reducedMotion={prefersReduced ? "always" : "never"}>
-      <section className="relative overflow-hidden pt-10 pb-16 md:pt-12 md:pb-24 px-5 flex justify-center">
+      <section className="relative overflow-hidden pt-10 pb-24 md:pt-12 md:pb-32 px-5 flex justify-center">
         <AuroraGradient className="h-full absolute inset-0" />
         <div className="max-w-[80rem] w-full grid md:grid-cols-2 gap-10 items-center">
           {/* === LEFT === */}

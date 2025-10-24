@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Button } from "@/components/ui/button";
 import { CheckCircle2, Briefcase, GraduationCap, Trophy } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { ApplyNowDialog } from "../ApplyNowDialog";
 
 type Mentor = {
   name: string;
@@ -79,7 +79,10 @@ export default function MentorSection({
   return (
     <section
       id="mentor"
-      className={cn("container mx-auto px-4 py-14 md:py-20", className)}
+      className={cn(
+        "relative container mx-auto px-4 py-14 md:py-20",
+        className
+      )}
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -96,20 +99,20 @@ export default function MentorSection({
         </h2>
       </motion.div>
 
-      <div className="grid items-stretch gap-6 md:grid-cols-5">
+      <div className="grid items-stretch gap-6 md:grid-cols-5 z-0">
         {/* Image */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="relative aspect-[4/5] overflow-hidden rounded-xl md:col-span-2 p-10"
+          className="relative aspect-[1/1] rounded-xl md:col-span-2"
         >
           <Image
             src={mentor.imageSrc}
             alt={mentor.name}
             fill
-            className="object-cover"
+            className="object-contain max-w-full"
             priority
           />
         </motion.div>
@@ -120,7 +123,7 @@ export default function MentorSection({
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.05 }}
           viewport={{ once: true }}
-          className="md:col-span-3"
+          className="md:col-span-3 z-10"
         >
           <Card className="h-full">
             <CardHeader className="pb-2">
@@ -179,9 +182,7 @@ export default function MentorSection({
               </ul>
 
               <div className="pt-2">
-                <Button asChild>
-                  <a href="#apply">Apply Now</a>
-                </Button>
+                <ApplyNowDialog />
               </div>
             </CardContent>
           </Card>
