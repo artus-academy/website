@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import SectionHeading from "@/components/SectionHeading";
+import { Badge } from "../ui/badge";
 
 const videos = ["7CoUFMO5qiM", "MPVDZ8WWT_4", "TDdo4cfWXQ8", "98BQOedbP_c"];
 
@@ -30,17 +30,31 @@ const itemVariants: Variants = {
 export default function YouTubeSection() {
   return (
     <motion.section
-      className="relative w-full"
+      className="relative w-full bg-gradient-to-b from-muted/20 to-background"
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
     >
       <div className="px-5 py-16 mx-auto flex flex-col items-center relative -translate-y-12 pt-32">
-        <SectionHeading
-          title="From Our YouTube Channel"
-          subtitle="Learn more about Web Development & Digital Marketing with our tutorials and tips"
-        />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="mb-8 text-center"
+        >
+          <Badge variant="secondary" className="rounded-full px-3 py-1 mb-3">
+            Our Channel
+          </Badge>
+          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+            From Our YouTube Channel
+          </h2>
+          <p className="text-muted-foreground mt-2">
+            Learn more about Web Development & Digital Marketing with our
+            tutorials and tips
+          </p>
+        </motion.div>
 
         <motion.div
           className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-[80rem] w-full"

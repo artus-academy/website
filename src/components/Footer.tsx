@@ -84,7 +84,7 @@ export const raleway = Raleway({
 export default function Footer() {
   return (
     <motion.footer
-      className="border-t bg-background mt-20"
+      className="border-t bg-background"
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}

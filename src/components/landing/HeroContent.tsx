@@ -33,7 +33,7 @@ export function HeroContent() {
 
   return (
     <MotionConfig reducedMotion={prefersReduced ? "always" : "never"}>
-      <section className="relative overflow-hidden pt-10 pb-12 md:pt-12 md:pb-16 px-5 flex justify-center">
+      <section className="relative overflow-hidden pt-10 pb-12 md:pt-12 md:pb-16 px-5 flex justify-center bg-gradient-to-b to-muted/20 from-background">
         <div className="absolute inset-0">
           <motion.div
             className="absolute w-96 h-96 bg-primary/30 blur-3xl rounded-full z-0"
