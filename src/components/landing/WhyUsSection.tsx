@@ -87,7 +87,7 @@ export default function WhyUsSection() {
                 }}
                 className={cn(
                   "relative group rounded-xl p-6 md:p-8 border bg-card hover:shadow-xl transition-all duration-300",
-                  "overflow-hidden"
+                  "overflow-hidden text-muted-foreground hover:text-foreground"
                 )}
               >
                 {/* Animated background gradient */}
@@ -109,8 +109,10 @@ export default function WhyUsSection() {
                     <Icon size={24} />
                   </div>
 
-                  <h3 className="text-xl font-semibold">{feature.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <h3 className="text-xl font-semibold text-foreground">
+                    {feature.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed">
                     {feature.description}
                   </p>
                 </div>

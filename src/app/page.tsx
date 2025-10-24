@@ -4,6 +4,8 @@ import FAQSection from "@/components/landing/FaqSection";
 import MentorSection from "@/components/landing/MentorSection";
 import AboutSection from "@/components/landing/AboutSection";
 import WhyUsSection from "@/components/landing/WhyUsSection";
+import CoursesSection from "@/components/landing/CoursesSection";
+import BlogSection from "@/components/landing/BlogSection";
 
 export default function HomePage() {
   return (
@@ -12,11 +14,15 @@ export default function HomePage() {
 
       <AboutSection />
 
+      <CoursesSection />
+
       <MentorSection />
 
       <WhyUsSection />
 
       <YouTubeSection />
+
+      <BlogSection />
 
       <FAQSection />
     </>

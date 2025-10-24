@@ -126,6 +126,32 @@ export default function MentorSection({ className }: { className?: string }) {
         className
       )}
     >
+      <div className="absolute inset-0">
+        <motion.div
+          className="absolute top-10 left-10 w-80 h-80 dark:bg-green-500/30 bg-green-600/30 blur-3xl rounded-full"
+          animate={{
+            x: [0, -60, 60, 0],
+            y: [0, 80, -80, 0],
+          }}
+          transition={{
+            duration: 18,
+            ease: "easeInOut",
+            repeat: Infinity,
+          }}
+        />
+        <motion.div
+          className="absolute bottom-10 right-10 w-80 h-80 dark:bg-pink-500/30 bg-pink-600/30 blur-3xl rounded-full"
+          animate={{
+            x: [0, -60, 60, 0],
+            y: [0, 80, -80, 0],
+          }}
+          transition={{
+            duration: 18,
+            ease: "easeInOut",
+            repeat: Infinity,
+          }}
+        />
+      </div>
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}

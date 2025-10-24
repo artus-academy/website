@@ -18,11 +18,25 @@ export default function FAQSection({ className }: { className?: string }) {
     <section
       id="faq"
       className={cn(
-        "flex justify-center px-4 py-12 md:py-16 bg-gradient-to-b to-muted/20 from-background",
+        "relative flex justify-center px-4 py-12 md:py-16 bg-gradient-to-b to-muted/20 from-background",
         className
       )}
     >
-      <div className="max-w-4xl">
+      <div className="absolute inset-0 z-0">
+        <motion.div
+          className="absolute top-50 left-10 w-80 h-80 dark:bg-sky-500/30 bg-sky-600/30 blur-3xl rounded-full"
+          animate={{
+            x: [0, -60, 60, 0],
+            y: [0, 80, -80, 0],
+          }}
+          transition={{
+            duration: 18,
+            ease: "easeInOut",
+            repeat: Infinity,
+          }}
+        />
+      </div>
+      <div className="max-w-4xl relative z-10">
         {/* Header Animation */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -52,7 +66,7 @@ export default function FAQSection({ className }: { className?: string }) {
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="who">
               <AccordionTrigger>Who is this course for?</AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
+              <AccordionContent>
                 For students, graduates, and working professionals who want to
                 start or upskill in web development. No prior coding experience
                 required. We start from the basics.
@@ -61,7 +75,7 @@ export default function FAQSection({ className }: { className?: string }) {
 
             <AccordionItem value="format">
               <AccordionTrigger>Is it online or offline?</AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
+              <AccordionContent>
                 We offer both options, attend offline sessions at our Kakkanad
                 campus or join interactive online classes. You can switch
                 anytime.
@@ -70,7 +84,7 @@ export default function FAQSection({ className }: { className?: string }) {
 
             <AccordionItem value="duration">
               <AccordionTrigger>How long is the course?</AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
+              <AccordionContent>
                 It is a 6-month intensive program with weekly assignments,
                 mentorship, and project reviews to build real-world skills.
               </AccordionContent>
@@ -80,7 +94,7 @@ export default function FAQSection({ className }: { className?: string }) {
               <AccordionTrigger>
                 Do you provide placement support?
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
+              <AccordionContent>
                 Yes! You&apos;ll receive resume assistance, mock interviews, and
                 direct interview opportunities with our hiring partners.
               </AccordionContent>
@@ -88,7 +102,7 @@ export default function FAQSection({ className }: { className?: string }) {
 
             <AccordionItem value="emi">
               <AccordionTrigger>Can I pay in installments?</AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
+              <AccordionContent>
                 Definitely, we offer flexible EMI options for all students.
                 Reach out to our counsellor for more details.
               </AccordionContent>
