@@ -11,6 +11,7 @@ import {
 import ContactForm from "./ContactForm";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { ApplyNowDialog } from "../ApplyNowDialog";
 
 export function HeroContent() {
   const prefersReduced = useReducedMotion();
@@ -33,7 +34,7 @@ export function HeroContent() {
 
   return (
     <MotionConfig reducedMotion={prefersReduced ? "always" : "never"}>
-      <section className="relative overflow-hidden pt-10 pb-12 md:pt-12 md:pb-16 px-5 flex justify-center bg-gradient-to-b to-muted/20 from-background">
+      <section className="relative overflow-hidden pt-10 pb-12 md:pt-12 md:pb-16 px-5 flex justify-center bg-gradient-to-b to-muted/20 from-background overflow-x-hidden">
         <div className="absolute inset-0">
           <motion.div
             className="absolute w-96 h-96 bg-primary/30 blur-3xl rounded-full z-0"
@@ -84,14 +85,16 @@ export function HeroContent() {
             </motion.p>
 
             <motion.div variants={fadeUp} className="mt-6 flex gap-3">
-              <Link href="/contact">
-                <Button
-                  className="relative z-10 flex items-center gap-2"
-                  variant="outline"
-                >
-                  Apply Now <ShieldCheck size={16} />
-                </Button>
-              </Link>
+              <ApplyNowDialog
+                trigger={
+                  <Button
+                    className="relative z-10 flex items-center gap-2"
+                    variant="outline"
+                  >
+                    Apply Now <ShieldCheck size={16} />
+                  </Button>
+                }
+              />
 
               <Link href="/courses">
                 <Button

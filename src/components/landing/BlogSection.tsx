@@ -38,7 +38,7 @@ const blogs = [
 
 export default function BlogSection() {
   return (
-    <section className="relative py-20 md:py-28 px-6 md:px-16 overflow-hidden">
+    <section className="relative py-20 md:py-28 px-6 md:px-16 overflow-hidden overflow-x-hidden">
       {/* Section Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}

@@ -6,10 +6,11 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Code2, Rocket } from "lucide-react";
 import { ApplyNowDialog } from "@/components/ApplyNowDialog";
+import Link from "next/link";
 
 const courses = [
   {
-    id: "web-dev",
+    id: "web-development",
     title: "Full Stack Web Development",
     subtitle: "Master both front-end and back-end development",
     description:
@@ -38,7 +39,7 @@ const courses = [
 
 export default function CoursesSection() {
   return (
-    <section className="relative py-20 md:py-28 px-6 md:px-16">
+    <section className="relative py-20 md:py-28 px-6 md:px-16 overflow-x-hidden">
       <div className="absolute inset-0">
         <motion.div
           className="absolute top-40 left-10 w-80 h-80 dark:bg-blue-500/30 bg-blue-600/30 blur-3xl rounded-full"
@@ -132,8 +133,9 @@ export default function CoursesSection() {
                   <Button
                     variant="outline"
                     className="px-6 dark:border-white/20"
+                    asChild
                   >
-                    View Details
+                    <Link href={`/courses/${course.id}`}>View Details</Link>
                   </Button>
                 </div>
               </div>

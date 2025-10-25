@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import WhoIsThisFor from "./WhoIsThisFor";
 import { Badge } from "../ui/badge";
+import Link from "next/link";
 
 export default function TrustedAcademySection({
   className,
@@ -14,7 +15,7 @@ export default function TrustedAcademySection({
   return (
     <motion.section
       className={cn(
-        "relative flex flex-col items-center justify-center text-center py-24 md:py-32 px-6  bg-gradient-to-b from-muted/20 to-background",
+        "relative flex flex-col items-center justify-center text-center py-24 md:py-32 px-6  bg-gradient-to-b from-muted/20 to-background overflow-x-hidden",
         className
       )}
     >
@@ -88,13 +89,15 @@ export default function TrustedAcademySection({
           Join our growing community of passionate learners, work on
           real-industry projects, and get personalized placement support. At
           <span className="text-primary font-medium"> Artus Academy</span>,
-          creativity meets code — and your career begins.
+          creativity meets code - and your career begins.
         </p>
 
         <div className="pt-4 flex flex-wrap gap-4 justify-center">
-          <Button size="lg">Explore Courses</Button>
-          <Button size="lg" variant="outline">
-            Contact Us
+          <Button size="lg" asChild>
+            <Link href="/courses">Explore Courses</Link>
+          </Button>
+          <Button size="lg" variant="outline" asChild>
+            <Link href="/contact">Contact Us</Link>
           </Button>
         </div>
       </motion.div>

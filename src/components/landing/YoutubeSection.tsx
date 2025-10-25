@@ -30,7 +30,7 @@ const itemVariants: Variants = {
 export default function YouTubeSection() {
   return (
     <motion.section
-      className="relative w-full bg-gradient-to-b from-muted/20 to-background"
+      className="relative w-full bg-gradient-to-b from-muted/20 to-background overflow-x-hidden"
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}

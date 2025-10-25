@@ -29,6 +29,7 @@ import {
   AccordionTrigger,
 } from "@radix-ui/react-accordion";
 import ThemeToggle from "./ThemeToggle";
+import { ApplyNowDialog } from "./ApplyNowDialog";
 
 const links = [
   { href: "/", label: "Home" },
@@ -122,9 +123,7 @@ export default function Navbar() {
             ))}
           </NavigationMenuList>
 
-          <Button asChild>
-            <Link href="/admissions">Apply</Link>
-          </Button>
+          <ApplyNowDialog trigger={<Button>Apply</Button>} />
           <ThemeToggle />
         </NavigationMenu>
 

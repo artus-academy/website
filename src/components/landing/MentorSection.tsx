@@ -122,7 +122,7 @@ export default function MentorSection({ className }: { className?: string }) {
     <section
       id="mentor"
       className={cn(
-        "relative container mx-auto px-4 py-14 md:py-20",
+        "relative container mx-auto px-4 py-14 md:py-20 overflow-x-hidden",
         className
       )}
     >
