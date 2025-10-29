@@ -28,10 +28,11 @@ const fadeUp = {
 export default function AboutPage() {
   return (
     <div className="relative flex flex-col pb-24 pt-24 md:pt-28 px-6 md:px-16 gap-20">
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-background to-background pointer-events-none z-0 max-h-96" />
       {/* ---------------- HERO ---------------- */}
       <motion.div
         {...fadeUp}
-        className="text-center max-w-3xl mx-auto space-y-4"
+        className="text-center max-w-3xl mx-auto space-y-4 z-10"
       >
         <Badge variant="secondary" className="px-4 py-1 rounded-full">
           About Us

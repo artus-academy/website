@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge";
 export default function ContactPage() {
   return (
     <section className="relative overflow-hidden py-20">
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-background to-background pointer-events-none z-0 max-h-96" />
       <div className="container mx-auto px-6 space-y-16 relative z-10">
         {/* Heading */}
         <motion.div
