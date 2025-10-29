@@ -105,12 +105,12 @@ const mentors: Mentor[] = [
       {
         icon: <GraduationCap className="h-4 w-4" />,
         label: "Specialization",
-        value: "SEO, Ads & Analytics",
+        value: "Ads & Analytics",
       },
       {
         icon: <Trophy className="h-4 w-4" />,
         label: "Impact",
-        value: "50+ Successfull companies",
+        value: "70+ Successfull companies",
       },
     ],
   },

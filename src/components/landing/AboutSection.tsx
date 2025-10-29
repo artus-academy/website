@@ -97,7 +97,7 @@ export default function TrustedAcademySection({
             <Link href="/courses">Explore Courses</Link>
           </Button>
           <Button size="lg" variant="outline" asChild>
-            <Link href="/contact">Contact Us</Link>
+            <Link href="/about">About Us</Link>
           </Button>
         </div>
       </motion.div>
