@@ -1,72 +1,57 @@
 "use client";
 
-import * as React from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import Link from "next/link";
-import { MailIcon, UserIcon } from "lucide-react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "../ui/card";
+import { toast } from "sonner";
 import {
   Form,
-  FormControl,
   FormField,
   FormItem,
+  FormLabel,
+  FormControl,
   FormMessage,
-} from "../ui/form";
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { sleep } from "@/lib/utils";
+import { Field, FieldDescription, FieldGroup } from "../ui/field";
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupInput,
   InputGroupText,
 } from "../ui/input-group";
-import { Field, FieldDescription, FieldGroup } from "../ui/field";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "../ui/select";
-import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
-import { toast } from "sonner";
-import { Label } from "../ui/label";
-import { sleep } from "@/lib/utils";
+import { MailIcon, UserIcon } from "lucide-react";
+import Link from "next/link";
 import ButtonLoading from "../ui/button-loading";
 
 const phoneRegex = /^[0-9+\-\s()]{7,15}$/;
 
-const Modes = ["online", "offline"] as const;
 const contactSchema = z.object({
-  name: z.string().min(2, "Please enter your full name."),
+  name: z.string().min(2, "Enter your full name."),
   email: z.email("Enter a valid email."),
   phone: z.string().regex(phoneRegex, "Enter a valid phone number."),
-  course: z.string().min(1, "Please select a course."),
-  mode: z.enum(Modes),
+  subject: z.string().min(2, "Enter a subject."),
+  message: z.string().min(10, "Message should be at least 10 characters."),
 });
 
 type ContactFormValues = z.infer<typeof contactSchema>;
 
-export default function ContactForm() {
+export default function ContactUsForm() {
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
       name: "",
       email: "",
       phone: "",
-      course: "",
-      mode: "online",
+      subject: "",
+      message: "",
     },
-    mode: "onTouched",
   });
 
-  const submitValues = async (data: ContactFormValues) => {
+  const submitValues = async (values: ContactFormValues) => {
     // Example: POST to your API route
     // await fetch("/api/applications", {
     //   method: "POST",
@@ -74,34 +59,29 @@ export default function ContactForm() {
     //   body: JSON.stringify(values),
     // });
 
-    console.log("Mocking the submission of ", data);
+    console.log("Mocking the submission of ", values);
     await sleep(2000);
     form.reset();
   };
 
   const onSubmit = async (values: ContactFormValues) => {
     const promise = submitValues(values);
-    toast.promise<void>(() => promise, {
-      loading: "Submitting your form...",
-      success: () => "Successfully booked your free class!",
-      error: "Error",
+    toast.promise(promise, {
+      loading: "Sending your message...",
+      success: "Message sent! We'll get back to you soon 😊",
+      error: "Something went wrong. Try again.",
     });
     return await promise;
   };
 
   return (
-    <Card className="h-fit w-full flex-1">
+    <Card className="backdrop-blur-md bg-card/60 border shadow-lg">
       <CardHeader>
-        <CardTitle>Book Your Free Live Class</CardTitle>
-        <CardDescription>
-          Just fill in your details below and get a live session from our top
-          instructors.
-        </CardDescription>
+        <CardTitle className="text-xl font-semibold">Contact Us</CardTitle>
       </CardHeader>
-
       <CardContent>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
             <FieldGroup className="gap-4">
               <FormField
                 control={form.control}
@@ -170,72 +150,45 @@ export default function ContactForm() {
                 />
               </div>
 
-              {/* Course Dropdown */}
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                {/* Mode Radio Group */}
-                <FormField
-                  control={form.control}
-                  name="mode"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormControl>
-                        <RadioGroup
-                          onValueChange={field.onChange}
-                          defaultValue={field.value}
-                          className="flex gap-6"
-                        >
-                          <div className="flex items-center space-x-2">
-                            <RadioGroupItem value="online" id="online" />
-                            <Label htmlFor="online">Online</Label>
-                          </div>
-                          <div className="flex items-center space-x-2">
-                            <RadioGroupItem value="offline" id="offline" />
-                            <Label htmlFor="offline">Offline</Label>
-                          </div>
-                        </RadioGroup>
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+              <FormField
+                name="subject"
+                control={form.control}
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Subject</FormLabel>
+                    <FormControl>
+                      <Input placeholder="How can we help you?" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
-                <FormField
-                  control={form.control}
-                  name="course"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormControl>
-                        <Select
-                          onValueChange={field.onChange}
-                          defaultValue={field.value}
-                        >
-                          <SelectTrigger className="w-full overflow-hidden text-ellipsis whitespace-nowrap">
-                            <SelectValue placeholder="Select a course" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="fullstack">
-                              Full Stack Web Development (6 Months)
-                            </SelectItem>
-                            <SelectItem value="digital">
-                              Digital Marketing (4 Months)
-                            </SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              </div>
+              <FormField
+                name="message"
+                control={form.control}
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Message</FormLabel>
+                    <FormControl>
+                      <Textarea
+                        placeholder="Write your message..."
+                        rows={5}
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
-              {/* Submit */}
-              <Field className="pt-4">
+              <Field className="flex justify-center mx-auto w-fit">
                 <ButtonLoading
                   type="submit"
-                  className="w-full"
                   loading={form.formState.isSubmitting}
+                  className="w-fit"
                 >
-                  Book a Free Class
+                  Send Message
                 </ButtonLoading>
                 <FieldDescription className="text-center text-xs">
                   By submitting this form, I have read the{" "}

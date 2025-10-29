@@ -39,7 +39,7 @@ const courses = [
 
 export default function CoursesSection() {
   return (
-    <section className="relative py-20 md:py-28 px-6 md:px-16 overflow-x-hidden">
+    <section className="relative py-20 md:py-28 px-6 md:px-16 overflow-x-hidden flex flex-col items-center">
       <div className="absolute inset-0">
         <motion.div
           className="absolute top-40 left-10 w-80 h-80 dark:bg-blue-500/30 bg-blue-600/30 blur-3xl rounded-full"
@@ -79,7 +79,7 @@ export default function CoursesSection() {
       </motion.div>
 
       {/* Courses Grid */}
-      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[80rem]">
         {courses.map((course, i) => {
           const Icon = course.icon;
           return (

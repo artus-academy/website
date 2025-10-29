@@ -117,18 +117,12 @@ const mentors: Mentor[] = [
 ];
 
 // -------------------- Mentor Section --------------------
-export default function MentorSection({ className }: { className?: string }) {
+export default function MentorSection() {
   return (
-    <section
-      id="mentor"
-      className={cn(
-        "relative container mx-auto px-4 py-14 md:py-20 overflow-x-hidden",
-        className
-      )}
-    >
+    <section className="relative py-20 md:py-28 px-6 md:px-16 overflow-hidden flex flex-col items-center">
       <div className="absolute inset-0">
         <motion.div
-          className="absolute top-10 left-10 w-80 h-80 dark:bg-green-500/30 bg-green-600/30 blur-3xl rounded-full"
+          className="absolute top-60 left-10 w-80 h-80 dark:bg-green-500/30 bg-green-600/30 blur-3xl rounded-full"
           animate={{
             x: [0, -60, 60, 0],
             y: [0, 80, -80, 0],
@@ -140,7 +134,7 @@ export default function MentorSection({ className }: { className?: string }) {
           }}
         />
         <motion.div
-          className="absolute bottom-10 right-10 w-80 h-80 dark:bg-pink-500/30 bg-pink-600/30 blur-3xl rounded-full"
+          className="absolute bottom-50 right-10 w-80 h-80 dark:bg-pink-500/30 bg-pink-600/30 blur-3xl rounded-full"
           animate={{
             x: [0, -60, 60, 0],
             y: [0, 80, -80, 0],
@@ -158,7 +152,7 @@ export default function MentorSection({ className }: { className?: string }) {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="mb-10 flex items-center gap-3"
+        className="mb-12 flex flex-col items-center gap-3"
       >
         <Badge variant="secondary" className="rounded-full px-3 py-1">
           Mentors
@@ -169,7 +163,7 @@ export default function MentorSection({ className }: { className?: string }) {
       </motion.div>
 
       {/* Mentors Grid */}
-      <div className="grid gap-16 md:gap-20">
+      <div className="grid gap-16 md:gap-20 max-w-[80rem]">
         {mentors.map((mentor, index) => (
           <div
             key={index}

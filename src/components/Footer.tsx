@@ -16,9 +16,9 @@ import { motion, type Variants } from "framer-motion";
 import { Raleway } from "next/font/google";
 
 const pages = [
+  { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Courses", href: "/courses" },
-  { label: "Admissions", href: "/admissions" },
   { label: "Contact", href: "/contact" },
 ];
 

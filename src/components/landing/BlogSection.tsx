@@ -38,7 +38,7 @@ const blogs = [
 
 export default function BlogSection() {
   return (
-    <section className="relative py-20 md:py-28 px-6 md:px-16 overflow-hidden overflow-x-hidden">
+    <section className="relative py-20 md:py-28 px-6 md:px-16 overflow-hidden overflow-x-hidden flex flex-col items-center">
       {/* Section Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -61,7 +61,7 @@ export default function BlogSection() {
       </motion.div>
 
       {/* Blog Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[80rem]">
         {blogs.map((blog, i) => (
           <motion.div
             key={blog.id}

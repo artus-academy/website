@@ -22,7 +22,7 @@ export default function TrustedAcademySection({
       <WhoIsThisFor />
       <div className="absolute inset-0">
         <motion.div
-          className="absolute top-10 right-10 w-80 h-80 dark:bg-pink-500/30 bg-pink-600/30 blur-3xl rounded-full"
+          className="absolute top-30 right-10 w-80 h-80 dark:bg-pink-500/30 bg-pink-600/30 blur-3xl rounded-full"
           animate={{
             x: [0, -60, 60, 0],
             y: [0, 80, -80, 0],
