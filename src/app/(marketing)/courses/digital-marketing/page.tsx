@@ -1,41 +1,49 @@
-import SectionHeading from "@/components/SectionHeading";
-export const metadata = { title: "Digital Marketing" };
+"use client";
 
-export default function DMPage() {
-  const topics = [
-    "Marketing Fundamentals & Positioning",
-    "SEO (On-page, Technical, Content)",
-    "Meta & Google Ads (Performance + Creatives)",
-    "Analytics (GA4, GSC, Tag Manager)",
-    "Content Strategy + Reels / Shorts",
-    "Email & Marketing Automation",
-    "Landing Pages & CRO",
-  ];
+import MobileCTABar from "@/components/courses/MobileCTABar";
+import TestimonialsCarousel from "@/components/courses/TestimonialsCarousel";
+import TitleSection from "@/components/courses/TitleSection";
+import { courses } from "@/data/courses";
+import OverviewSection from "@/components/courses/OverviewSection";
+import CurriculumSection from "@/components/courses/CurriculumSection";
+import CTASection from "@/components/courses/CTASection";
+import WhyUsSection from "@/components/courses/WhyUsSection";
+import AchievementsSection from "@/components/courses/AchievementsSection";
+import MentorSection from "@/components/courses/MentorSection";
+import TechnologiesSection from "@/components/courses/TechnologiesSection";
+
+export default function DigitalMarketingCoursePage() {
   return (
-    <div className="container py-12 md:py-16">
-      <SectionHeading
-        title="Digital Marketing"
-        subtitle="Performance + content, taught together."
-      />
-      <div className="grid md:grid-cols-2 gap-6">
-        <div className="card p-6">
-          <h3 className="font-semibold mb-2">Topics</h3>
-          <ul className="list-disc pl-5 space-y-1 text-slate-700">
-            {topics.map((t) => (
-              <li key={t}>{t}</li>
-            ))}
-          </ul>
-        </div>
-        <div className="card p-6">
-          <h3 className="font-semibold mb-2">Projects</h3>
-          <p className="text-slate-600">
-            Run real campaigns, build reports, and present insights like a pro.
-          </p>
-          <a href="/admissions" className="btn-primary mt-4 inline-block">
-            Apply Now
-          </a>
-        </div>
+    <section className="relative px-6 py-16 md:py-24 w-full">
+      <div className="absolute inset-0 bg-gradient-to-b from-pink-500/10 via-background to-background pointer-events-none z-0 max-h-96" />
+
+      <div className="max-w-[80rem] mx-auto relative z-10 space-y-14">
+        <TitleSection {...courses.digitalMarketing} />
+
+        <OverviewSection overview={courses.digitalMarketing.overview} />
+
+        <CurriculumSection syllabus={courses.digitalMarketing.syllabus} />
+
+        <MentorSection mentors={courses.digitalMarketing.mentors} />
+
+        <AchievementsSection
+          achievements={courses.digitalMarketing.achievements}
+        />
+
+        <TechnologiesSection
+          technologies={courses.digitalMarketing.technologies}
+        />
+
+        <WhyUsSection whyUs={courses.digitalMarketing.whyUs} />
+
+        <CTASection role="Digital marketer" />
+
+        <TestimonialsCarousel
+          testimonials={courses.digitalMarketing.testimonials}
+        />
+
+        <MobileCTABar />
       </div>
-    </div>
+    </section>
   );
 }

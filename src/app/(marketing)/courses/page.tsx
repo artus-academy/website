@@ -52,7 +52,7 @@ export default function CoursesPage() {
 
           {/* Course Grid */}
           <div className="grid gap-8 md:grid-cols-2">
-            {courses.map((course, i) => (
+            {Object.values(courses).map((course, i) => (
               <motion.div
                 key={course.id}
                 initial={{ opacity: 0, y: 30 }}

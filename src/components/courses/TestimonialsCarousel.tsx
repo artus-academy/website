@@ -1,42 +1,23 @@
 "use client";
 
+import { Testimonial } from "@/data/courses";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const TESTIMONIALS = [
-  {
-    name: "Jithin K.",
-    role: "Full Stack Web Development",
-    avatar: "/images/testimonials/jithin.png",
-    quote:
-      "Felt like real-deal team vibes with Git and PRs. Demo Day? A whole mood. Got serious confidence and literally started getting interview pings right after. Bet!",
-  },
-  {
-    name: "Athira P.",
-    role: "Full Stack Web Development",
-    avatar: "/images/testimonials/athira.png",
-    quote:
-      "Built a React dashboard that's low-key my flex in interviews now. Legit boosted my portfolio.",
-  },
-  {
-    name: "Neha S.",
-    role: "Full Stack Web Development",
-    avatar: "/images/testimonials/neha.png",
-    quote:
-      "Non-CS background here, but the structure was a total game-changer. The projects slapped, and getting doubts cleared was super smooth. No cap, it was awesome.",
-  },
-];
-
-export default function TestimonialsCarousel() {
+export default function TestimonialsCarousel({
+  testimonials,
+}: {
+  testimonials: Testimonial[];
+}) {
   return (
-    <section className="space-y-6 w-full">
+    <section className="space-y-6 w-full pt-12">
       <h2 className="text-2xl md:text-3xl font-bold text-center">
         What Our Students Say
       </h2>
 
       <div className="relative w-full overflow-hidden">
         <motion.div className="flex gap-4 overflow-x-auto overflow-y-hidden scrollbar-hide snap-x snap-mandatory px-4 justify-start lg:justify-center">
-          {TESTIMONIALS.map((t, i) => (
+          {testimonials.map((t, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
