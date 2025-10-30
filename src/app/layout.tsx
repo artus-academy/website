@@ -19,7 +19,7 @@ const geistSans = Geist({
 
 export const metadata: Metadata = {
   title: {
-    default: "ArtUs Academy — Web Development & Digital Marketing",
+    default: "ArtUs Academy - Web Development & Digital Marketing",
     template: "%s • ArtUs Academy",
   },
   description:
