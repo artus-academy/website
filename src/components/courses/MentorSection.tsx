@@ -30,14 +30,14 @@ export default function MentorSection({ mentors }: { mentors: Mentor[] }) {
       {mentors.map((mentor) => (
         <div
           key={mentor.name}
-          className="relative grid items-stretch gap-10 md:grid-cols-5 max-w-6xl"
+          className="relative grid items-stretch gap-5 lg:gap-10 md:grid-cols-5 max-w-7xl"
         >
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="relative aspect-square md:col-span-2 flex items-center justify-center"
+            className="relative md:col-span-2 flex items-center justify-center"
           >
             <Image
               src={mentor.image}
@@ -54,7 +54,7 @@ export default function MentorSection({ mentors }: { mentors: Mentor[] }) {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="md:col-span-3 z-10 bg-card border rounded-2xl p-8 shadow-sm backdrop-blur-md"
+            className="md:col-span-3 z-10 bg-card border rounded-2xl p-8 shadow-sm"
           >
             <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
               <div>
@@ -89,13 +89,10 @@ export default function MentorSection({ mentors }: { mentors: Mentor[] }) {
 
             {/* Achievements */}
             <ul className="space-y-3 text-sm text-muted-foreground">
-              {mentor.achievements.map((a) => (
-                <li
-                  key={a?.toString()}
-                  className="flex items-start gap-2 flex-wrap"
-                >
-                  <Star className="text-primary mt-0.5 w-4 h-4" />
-                  {a}
+              {mentor.achievements.map((a, i) => (
+                <li key={i} className="flex items-start gap-2">
+                  <Star className="text-primary mt-0.5 size-4" />
+                  <span>{a}</span>
                 </li>
               ))}
             </ul>

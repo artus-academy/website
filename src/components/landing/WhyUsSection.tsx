@@ -52,8 +52,8 @@ const FEATURES = [
 
 export default function WhyUsSection() {
   return (
-    <section className="py-20 md:py-28 px-6 md:px-16 bg-gradient-to-b from-background to-muted/20 flex justify-center overflow-x-hidden">
-      <div className="max-w-[80rem]">
+    <section className="py-20 md:py-28 px-6 md:px-16 bg-linear-to-b from-background to-muted/20 flex justify-center overflow-x-hidden">
+      <div className="max-w-7xl">
         <div className="text-center mb-14 space-y-3">
           <Badge variant="secondary">Why Us</Badge>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight">

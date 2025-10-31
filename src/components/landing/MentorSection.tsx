@@ -58,7 +58,7 @@ export default function MentorSection() {
       </motion.div>
 
       {/* Mentors Grid */}
-      <div className="grid gap-16 md:gap-20 max-w-[80rem]">
+      <div className="grid gap-16 md:gap-20 max-w-7xl">
         {mentors.map((mentor, index) => (
           <div
             key={index}
@@ -74,7 +74,7 @@ export default function MentorSection() {
               transition={{ duration: 0.6, ease: "easeOut" }}
               viewport={{ once: true }}
               className={cn(
-                "relative aspect-square rounded-xl md:col-span-2",
+                "relative md:col-span-2 flex items-center justify-center min-h-96",
                 index % 2 === 1 ? "md:col-start-4" : ""
               )}
             >
@@ -82,7 +82,7 @@ export default function MentorSection() {
                 src={mentor.image}
                 alt={mentor.name}
                 fill
-                className="object-contain max-w-full"
+                className="object-contain"
                 priority
               />
             </motion.div>

@@ -9,7 +9,7 @@ export const webDevelopment: Course = {
   description:
     "Learn to build complete web applications from scratch using HTML, CSS, JavaScript, React, Java, Spring Boot, and MySQL. Get hands-on with real projects, version control, and modern deployment workflows.",
   overview: [
-    "This Full Stack Web Development program is designed to guide learners from the fundamentals to an industry-ready skill level. Through structured modules, hands-on assignments, and real project experience, you will gain the ability to build complete web applications using modern technologies.",
+    "This Full Stack Web Development program is a 6 month long program designed to guide learners from the fundamentals to an industry-ready skill level. Through structured modules, hands-on assignments, and real project experience, you will gain the ability to build complete web applications using modern technologies.",
     "The training is conducted by experienced developers who have worked on real-world software projects. You will be learning coding best practices, application architecture, debugging strategies, and collaborative workflows followed in professional tech teams.",
   ],
   duration: "6 Months",

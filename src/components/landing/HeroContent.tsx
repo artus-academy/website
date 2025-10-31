@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Zap, ShieldCheck, Play } from "lucide-react";
+import { Zap, ShieldCheck, Play, Heart, Star } from "lucide-react";
 import {
   motion,
   useReducedMotion,
@@ -12,6 +12,7 @@ import ContactForm from "./ContactForm";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { ApplyNowDialog } from "../ApplyNowDialog";
+import GitHubStars from "./GithubStarts";
 
 export function HeroContent() {
   const prefersReduced = useReducedMotion();
@@ -34,7 +35,7 @@ export function HeroContent() {
 
   return (
     <MotionConfig reducedMotion={prefersReduced ? "always" : "never"}>
-      <section className="relative overflow-hidden pt-10 pb-12 md:pt-12 md:pb-16 px-5 flex justify-center bg-gradient-to-b to-muted/20 from-background overflow-x-hidden">
+      <section className="relative overflow-hidden pt-10 pb-12 md:pt-12 md:pb-16 px-5 flex justify-center bg-linear-to-b to-muted/20 from-background overflow-x-hidden">
         <div className="absolute inset-0">
           <motion.div
             className="absolute w-96 h-96 bg-primary/30 blur-3xl rounded-full z-0"
@@ -50,7 +51,7 @@ export function HeroContent() {
           />
         </div>
         {/* <AuroraGradient className="h-full absolute inset-0" /> */}
-        <div className="max-w-[80rem] w-full grid md:grid-cols-2 gap-10 items-center z-10">
+        <div className="max-w-7xl w-full grid md:grid-cols-2 gap-10 items-center z-10">
           {/* === LEFT === */}
 
           <motion.div
@@ -114,6 +115,28 @@ export function HeroContent() {
               <span className="pt-5 font-light text-lg">
                 Next batch starts in{" "}
                 <span className="text-primary font-medium">NOVEMBER</span>
+              </span>
+            </motion.div>
+
+            <motion.div
+              variants={fadeUp}
+              className="mt-4 flex flex-wrap items-center gap-3 text-sm text-muted-foreground bg-muted/20 px-4 py-2 rounded-lg border border-muted w-fit"
+            >
+              <span className="flex flex-wrap gap-1 items-center justify-center">
+                We <Heart className="size-4 fill-primary stroke-primary" /> open
+                source
+                <span className="font-semibold text-foreground">
+                  open source
+                </span>
+                .{" "}
+                <Link
+                  href="https://github.com/artus-academy"
+                  target="_blank"
+                  className="text-primary hover:underline"
+                >
+                  View on GitHub
+                </Link>
+                <GitHubStars />
               </span>
             </motion.div>
           </motion.div>

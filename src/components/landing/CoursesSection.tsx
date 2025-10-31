@@ -55,7 +55,7 @@ export default function CoursesSection() {
         />
       </div>
       {/* Soft background gradient for both modes */}
-      <div className="absolute inset-0 bg-gradient-to-b dark:from-background dark:via-muted/20 dark:to-background pointer-events-none transition-colors duration-700" />
+      <div className="absolute inset-0 bg-linear-to-b dark:from-background dark:via-muted/20 dark:to-background pointer-events-none transition-colors duration-700" />
 
       {/* Header */}
       <motion.div
@@ -79,7 +79,7 @@ export default function CoursesSection() {
       </motion.div>
 
       {/* Courses Grid */}
-      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[80rem]">
+      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl">
         {courses.map((course, i) => {
           const Icon = course.icon;
           return (
@@ -98,7 +98,7 @@ export default function CoursesSection() {
               <div
                 className={cn(
                   "absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 blur-2xl transition duration-500",
-                  `bg-gradient-to-br ${course.darkGradient} dark:${course.darkGradient} ${course.lightGradient}`
+                  `bg-linear-to-br ${course.darkGradient} dark:${course.darkGradient} ${course.lightGradient}`
                 )}
               />
 

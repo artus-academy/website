@@ -18,7 +18,7 @@ export default function FAQSection({ className }: { className?: string }) {
     <section
       id="faq"
       className={cn(
-        "relative flex justify-center px-4 py-12 md:py-16 bg-gradient-to-b to-muted/20 from-background overflow-x-hidden",
+        "relative flex justify-center px-4 py-12 md:py-16 bg-linear-to-b to-muted/20 from-background overflow-x-hidden",
         className
       )}
     >

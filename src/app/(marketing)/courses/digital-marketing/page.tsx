@@ -15,9 +15,9 @@ import TechnologiesSection from "@/components/courses/TechnologiesSection";
 export default function DigitalMarketingCoursePage() {
   return (
     <section className="relative px-6 py-16 md:py-24 w-full">
-      <div className="absolute inset-0 bg-gradient-to-b from-pink-500/10 via-background to-background pointer-events-none z-0 max-h-96" />
+      <div className="absolute inset-0 bg-linear-to-b from-pink-500/10 via-background to-background pointer-events-none z-0 max-h-96" />
 
-      <div className="max-w-[80rem] mx-auto relative z-10 space-y-14">
+      <div className="max-w-7xl mx-auto relative z-10 space-y-14">
         <TitleSection {...courses.digitalMarketing} />
 
         <OverviewSection overview={courses.digitalMarketing.overview} />

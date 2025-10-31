@@ -61,7 +61,7 @@ export default function BlogSection() {
       </motion.div>
 
       {/* Blog Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[80rem]">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl">
         {blogs.map((blog, i) => (
           <motion.div
             key={blog.id}

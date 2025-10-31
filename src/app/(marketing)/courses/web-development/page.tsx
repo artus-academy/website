@@ -15,9 +15,9 @@ import MentorSection from "@/components/courses/MentorSection";
 export default function FullStackCoursePage() {
   return (
     <section className="relative px-6 py-16 md:py-24 w-full">
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-500/10 via-background to-background pointer-events-none z-0 max-h-96" />
+      <div className="absolute inset-0 bg-linear-to-b from-blue-500/10 via-background to-background pointer-events-none z-0 max-h-96" />
 
-      <div className="max-w-[80rem] mx-auto relative z-10 space-y-14">
+      <div className="max-w-7xl mx-auto relative z-10 space-y-14">
         <TitleSection {...courses.webDevelopment} />
 
         <OverviewSection overview={courses.webDevelopment.overview} />

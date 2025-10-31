@@ -16,7 +16,7 @@ export default function CoursesPage() {
     <>
       <section className="relative pt-20 md:pt-28 mb-20 px-6">
         {/* Soft Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-background to-background pointer-events-none" />
+        <div className="absolute inset-0 bg-linear-to-b from-primary/10 via-background to-background pointer-events-none" />
 
         <div className="container relative z-10 mx-auto space-y-14">
           {/* Header */}
@@ -70,7 +70,7 @@ export default function CoursesPage() {
                     <div
                       className={cn(
                         "absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 blur-2xl transition duration-500",
-                        `bg-gradient-to-br ${course.darkGradient} dark:${course.darkGradient} ${course.lightGradient}`
+                        `bg-linear-to-br ${course.darkGradient} dark:${course.darkGradient} ${course.lightGradient}`
                       )}
                     />
                     <CardHeader>

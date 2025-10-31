@@ -30,7 +30,7 @@ const itemVariants: Variants = {
 export default function YouTubeSection() {
   return (
     <motion.section
-      className="relative w-full bg-gradient-to-b from-muted/20 to-background overflow-x-hidden"
+      className="relative w-full bg-linear-to-b from-muted/20 to-background overflow-x-hidden"
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
@@ -71,7 +71,7 @@ export default function YouTubeSection() {
         </motion.div>
 
         <motion.div
-          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-[80rem] w-full"
+          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl w-full"
           variants={containerVariants}
         >
           {videos.map((id) => (

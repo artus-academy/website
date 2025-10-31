@@ -56,7 +56,6 @@ export default function TitleSection({
       <motion.div
         {...fadeUp}
         className="flex flex-wrap justify-center items-center gap-6 mx-auto text-center"
-        key={mentor.name}
       >
         <Image
           src={mentor.image}

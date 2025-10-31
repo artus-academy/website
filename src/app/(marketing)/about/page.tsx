@@ -28,7 +28,7 @@ const fadeUp = {
 export default function AboutPage() {
   return (
     <div className="relative flex flex-col pb-24 pt-24 md:pt-28 px-6 md:px-16 gap-20">
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-background to-background pointer-events-none z-0 max-h-96" />
+      <div className="absolute inset-0 bg-linear-to-b from-primary/10 via-background to-background pointer-events-none z-0 max-h-96" />
       {/* ---------------- HERO ---------------- */}
       <motion.div
         {...fadeUp}
@@ -74,7 +74,7 @@ export default function AboutPage() {
           className="rounded-xl p-8 border bg-card relative overflow-hidden group transition-all"
         >
           {/* Hover Glow */}
-          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 blur-xl transition duration-500 bg-gradient-to-br from-primary/20 via-primary/5 to-transparent"></div>
+          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 blur-xl transition duration-500 bg-linear-to-br from-primary/20 via-primary/5 to-transparent"></div>
 
           <div className="relative z-10 flex flex-col gap-4">
             <div className="flex items-center gap-x-2">
@@ -97,7 +97,7 @@ export default function AboutPage() {
           className="rounded-xl p-8 border bg-card relative overflow-hidden group transition-all"
         >
           {/* Hover Glow */}
-          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 blur-xl transition duration-500 bg-gradient-to-br from-primary/20 via-primary/5 to-transparent"></div>
+          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 blur-xl transition duration-500 bg-linear-to-br from-primary/20 via-primary/5 to-transparent"></div>
 
           <div className="relative z-10 flex flex-col gap-4">
             <div className="flex items-center gap-x-2">
@@ -253,7 +253,7 @@ export default function AboutPage() {
                 className="group relative rounded-2xl border bg-card p-6 hover:shadow-xl transition-all duration-300 overflow-hidden"
               >
                 {/* Hover glow gradient */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 blur-2xl transition duration-500 bg-gradient-to-br from-primary/20 via-primary/5 to-transparent" />
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 blur-2xl transition duration-500 bg-linear-to-br from-primary/20 via-primary/5 to-transparent" />
 
                 <div className="relative z-10 flex flex-col items-center text-center space-y-4">
                   <div className="p-3 rounded-full bg-primary/10 text-primary group-hover:scale-110 transition">

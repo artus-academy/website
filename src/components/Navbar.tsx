@@ -54,6 +54,7 @@ const links = [
       },
     ],
   },
+  { href: "/#faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -106,7 +107,7 @@ export default function Navbar() {
                 )}
 
                 <NavigationMenuContent>
-                  <ul className="grid w-[400px] lg:w-[500px] gap-2 md:grid-cols-2 ">
+                  <ul className="grid w-[400px] gap-2 grid-cols-1">
                     {l.components?.map((c) => (
                       <ListItem
                         key={c.label}

@@ -15,7 +15,7 @@ export default function TrustedAcademySection({
   return (
     <motion.section
       className={cn(
-        "relative flex flex-col items-center justify-center text-center py-24 md:py-32 px-6  bg-gradient-to-b from-muted/20 to-background overflow-x-hidden",
+        "relative flex flex-col items-center justify-center text-center py-24 md:py-32 px-6  bg-linear-to-b from-muted/20 to-background overflow-x-hidden",
         className
       )}
     >
