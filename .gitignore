@@ -13,7 +13,8 @@
 # testing
 /coverage
 
-# next.js
+# next.jsNEXT_PUBLIC_SITE_URL=http://localhost:3000
+
 /.next/
 /out/
 
@@ -32,6 +33,7 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.sample
 
 # vercel
 .vercel

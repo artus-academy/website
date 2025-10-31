@@ -21,7 +21,15 @@ import {
 import { ReactNode, useState } from "react";
 import Image from "next/image";
 import { Raleway } from "next/font/google";
-import { ChevronDown, Globe, Megaphone, Menu } from "lucide-react";
+import {
+  ChevronDown,
+  CircleQuestionMark,
+  Globe,
+  Headset,
+  Megaphone,
+  Menu,
+  Rss,
+} from "lucide-react";
 import { Accordion } from "./ui/accordion";
 import {
   AccordionContent,
@@ -30,8 +38,22 @@ import {
 } from "@radix-ui/react-accordion";
 import ThemeToggle from "./ThemeToggle";
 import { ApplyNowDialog } from "./ApplyNowDialog";
+import { Url } from "next/dist/shared/lib/router/router";
+import { cn } from "@/lib/utils";
 
-const links = [
+type Link = {
+  href?: Url;
+  label: string;
+  componentClass?: string;
+  components?: {
+    label: string;
+    icon?: ReactNode;
+    href: Url;
+    description?: string;
+  }[];
+};
+
+const links: Link[] = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   {
@@ -54,8 +76,26 @@ const links = [
       },
     ],
   },
-  { href: "/#faq", label: "FAQ" },
-  { href: "/contact", label: "Contact" },
+  {
+    label: "More",
+    components: [
+      {
+        label: "FAQ",
+        icon: <CircleQuestionMark className="size-5" />,
+        href: "/#faq",
+      },
+      {
+        label: "Blogs",
+        icon: <Rss className="size-5" />,
+        href: "/blogs",
+      },
+      {
+        label: "Contact",
+        icon: <Headset className="size-5" />,
+        href: "/contact",
+      },
+    ],
+  },
 ];
 
 export const raleway = Raleway({
@@ -88,26 +128,39 @@ export default function Navbar() {
         <NavigationMenu className="hidden md:flex items-center gap-3">
           <NavigationMenuList>
             {links.map((l) => (
-              <NavigationMenuItem key={l.href}>
+              <NavigationMenuItem key={l.label}>
                 {l.components ? (
-                  <NavigationMenuTrigger>
-                    <Link href={l.href} passHref>
-                      {l.label}
-                    </Link>
+                  <NavigationMenuTrigger className="bg-transparent">
+                    {l.href ? (
+                      <Link href={l.href} passHref>
+                        {l.label}
+                      </Link>
+                    ) : (
+                      <span>{l.label}</span>
+                    )}
                   </NavigationMenuTrigger>
                 ) : (
                   <NavigationMenuLink
                     className="px-3 py-2 text-sm font-medium hover:text-primary"
                     asChild
                   >
-                    <Link href={l.href} passHref>
-                      {l.label}
-                    </Link>
+                    {l.href ? (
+                      <Link href={l.href} passHref>
+                        {l.label}
+                      </Link>
+                    ) : (
+                      <span>{l.label}</span>
+                    )}
                   </NavigationMenuLink>
                 )}
 
                 <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-2 grid-cols-1">
+                  <ul
+                    className={cn(
+                      "grid w-[400px] gap-2 grid-cols-1",
+                      l.componentClass
+                    )}
+                  >
                     {l.components?.map((c) => (
                       <ListItem
                         key={c.label}
@@ -147,7 +200,7 @@ export default function Navbar() {
               {links.map((l) =>
                 l.components ? (
                   <Accordion
-                    key={l.href}
+                    key={l.label}
                     type="single"
                     collapsible
                     className="w-full"
@@ -160,7 +213,7 @@ export default function Navbar() {
                       <AccordionContent className="flex flex-col gap-3 text-balance pl-3 mt-3">
                         {l.components.map((c) => (
                           <Link
-                            key={c.href}
+                            key={c.label}
                             href={c.href}
                             onClick={() => setOpen(false)}
                             className="font-medium hover:text-primary"
@@ -171,15 +224,17 @@ export default function Navbar() {
                       </AccordionContent>
                     </AccordionItem>
                   </Accordion>
-                ) : (
+                ) : l.href ? (
                   <Link
-                    key={l.href}
+                    key={l.label}
                     href={l.href}
                     onClick={() => setOpen(false)}
                     className="text-lg font-medium hover:text-primary"
                   >
                     {l.label}
                   </Link>
+                ) : (
+                  <span className="text-lg font-medium">{l.label}</span>
                 )
               )}
               <Button asChild className="mt-4">
@@ -199,18 +254,20 @@ function ListItem({
   href,
   icon,
   ...props
-}: React.ComponentPropsWithoutRef<"li"> & { href: string; icon: ReactNode }) {
+}: React.ComponentPropsWithoutRef<"li"> & { href: Url; icon: ReactNode }) {
   return (
     <li {...props}>
       <NavigationMenuLink asChild>
         <Link href={href}>
-          <div className="flex gap-x-2">
+          <div className="flex gap-x-2 items-center">
             <div className="flex items-center justify-center">{icon}</div>
             <div>
               <div className="text-sm leading-none font-medium">{title}</div>
-              <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
-                {children}
-              </p>
+              {children && (
+                <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
+                  {children}
+                </p>
+              )}
             </div>
           </div>
         </Link>

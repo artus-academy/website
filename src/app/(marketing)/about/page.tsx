@@ -169,11 +169,11 @@ export default function AboutPage() {
 
         <div className="relative overflow-x-auto overflow-y-hidden">
           {/* Gradient fade edges */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-12 md:w-24 bg-gradient-to-r from-background to-transparent z-10" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-12 md:w-24 bg-gradient-to-l from-background to-transparent z-10" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-12 md:w-24 bg-linear-to-r from-background to-transparent z-10" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-12 md:w-24 bg-linear-to-l from-background to-transparent z-10" />
 
           {/* Marquee container */}
-          <div className="relative flex gap-10 animate-marquee hover:[animation-play-state:paused] z-0">
+          <div className="relative flex gap-10 animate-marquee hover:paused z-0">
             {[...Array(2)].map((_, loop) => (
               <div key={loop} className="flex gap-10">
                 {[1, 2, 3, 4, 5, 6, 7].map((i) => (

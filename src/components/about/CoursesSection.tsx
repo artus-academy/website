@@ -13,7 +13,7 @@ export default function CoursesSection() {
           <div className="flex items-center gap-2 mb-2">
             <div
               className={cn(
-                "p-2 rounded-lg bg-gradient-to-r shadow-sm transition-colors",
+                "p-2 rounded-lg bg-linear-to-r shadow-sm transition-colors",
                 "bg-blue-100 text-blue-700",
                 "dark:",
                 "bg-blue-500/10 text-blue-400"
@@ -38,7 +38,7 @@ export default function CoursesSection() {
           <div className="flex items-center gap-2 mb-2">
             <div
               className={cn(
-                "p-2 rounded-lg bg-gradient-to-r shadow-sm transition-colors",
+                "p-2 rounded-lg bg-linear-to-r shadow-sm transition-colors",
                 "bg-pink-100 text-pink-700",
                 "dark:",
                 "bg-pink-500/10 text-pink-400"

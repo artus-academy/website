@@ -6,6 +6,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
+import { env } from "@/lib/env";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,6 +19,7 @@ const geistSans = Geist({
 // });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(env.siteUrl),
   title: {
     default: "ArtUs Academy - Web Development & Digital Marketing",
     template: "%s • ArtUs Academy",
@@ -61,4 +63,8 @@ export default function RootLayout({
       </body>
     </html>
   );
+}
+
+export function DefaultLayout({ children }: { children: React.ReactNode }) {
+  return children;
 }
