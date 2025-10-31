@@ -45,7 +45,7 @@ export default async function Page({
       )}
       <h1>{metadata.title}</h1>
 
-      <div className="text-sm text-muted-foreground flex gap-3">
+      <div className="text-sm text-muted-foreground flex gap-1">
         <span>{new Date(metadata.date).toLocaleDateString()}</span>
         <span>• {metadata.author}</span>
       </div>
@@ -58,26 +58,32 @@ export default async function Page({
       <div className="flex justify-start gap-4 mt-24 mb-16">
         <span className="mr-1">Share on:</span>
         <Link
-          href={`https://wa.me/?text=${shareUrl}/blogs/${slug}`}
+          href={`https://wa.me/?text=Just found an awesome blog on *${metadata.title}*. Give it a read ${shareUrl}`}
           target="_blank"
         >
           WhatsApp
         </Link>
         <Link
-          href={`https://www.linkedin.com/shareArticle?url=${shareUrl}/blogs/${slug}`}
+          href={`https://www.linkedin.com/shareArticle?url=${shareUrl}`}
           target="_blank"
         >
           LinkedIn
         </Link>
         <Link
-          href={`https://twitter.com/intent/tweet?url=${shareUrl}/blogs/${slug}`}
+          href={`https://twitter.com/intent/tweet?text=Just found an awesome blog on ${
+            metadata.title
+          }. Give it a read&hashtags=${socialTags(metadata.tags).join(
+            ","
+          )}&url=${shareUrl}`}
           target="_blank"
         >
-          Twitter / X
+          X
         </Link>
       </div>
     </>
   );
 }
+
+const socialTags = (tags: string[]) => ["Artus", "ArtusAcademy", ...tags];
 
 export const dynamicParams = false;
