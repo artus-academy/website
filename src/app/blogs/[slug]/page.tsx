@@ -47,7 +47,7 @@ export default async function Page({
 
       <div className="text-sm text-muted-foreground flex gap-1">
         <span>{new Date(metadata.date).toLocaleDateString()}</span>
-        <span>• {metadata.author}</span>
+        <span>• {metadata.author?.name}</span>
       </div>
 
       <Separator className="mt-10 mb-8" />

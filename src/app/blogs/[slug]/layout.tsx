@@ -17,7 +17,7 @@ export async function generateMetadata({
   return {
     title: metadata.title + " • ArtUs Academy",
     description: metadata.description ?? "",
-    authors: metadata.author ?? "ArtUs Academy",
+    authors: [metadata.author],
     openGraph: {
       title: metadata.title,
       description: metadata.description ?? "",
