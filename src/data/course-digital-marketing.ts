@@ -12,6 +12,7 @@ import { mentors } from "./mentors";
 export const digitalMarketing: Course = {
   id: "digital-marketing",
   title: "Professional Digital Marketing Course",
+  tagline: "Master ads, SEO, content strategy and analytics",
   subtitle: "Learn how to grow brands in the digital world",
   description:
     "Gain practical skills in SEO, paid advertising, social media marketing, analytics, and campaign strategy. Create and manage marketing plans for real businesses guided by industry professionals.",

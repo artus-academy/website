@@ -16,8 +16,9 @@ import {
   Users2,
 } from "lucide-react";
 import StatsSection from "@/components/about/StatsSection";
-import { ApplyNowDialog } from "@/components/ApplyNowDialog";
+
 import CoursesSection from "@/components/about/CoursesSection";
+import CTACommon from "@/components/CTACommon";
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -273,23 +274,7 @@ export default function AboutPage() {
       </motion.div>
 
       {/* ---------------- CTA ---------------- */}
-      <motion.div
-        {...fadeUp}
-        className="text-center max-w-xl mx-auto space-y-5"
-      >
-        <h3 className="text-3xl font-bold">Ready to Begin?</h3>
-        <p className="text-muted-foreground">
-          Take your first step into tech and digital careers with mentors
-          guiding you every step of the way.
-        </p>
-        <ApplyNowDialog
-          trigger={
-            <Button size="lg" className="px-8 py-6 text-base">
-              Apply Now
-            </Button>
-          }
-        />
-      </motion.div>
+      <CTACommon />
     </div>
   );
 }

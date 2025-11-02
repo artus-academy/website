@@ -7,6 +7,7 @@ export type Course = {
   id: string;
   title: string;
   subtitle: string;
+  tagline: string;
   description: string;
   overview: string[];
   icon: LucideIcon;

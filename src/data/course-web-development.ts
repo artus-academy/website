@@ -5,6 +5,7 @@ import { mentors } from "./mentors";
 export const webDevelopment: Course = {
   id: "web-development",
   title: "Full Stack Web Development",
+  tagline: "Build full production-ready applications",
   subtitle: "Master both front-end and back-end development",
   description:
     "Learn to build complete web applications from scratch using HTML, CSS, JavaScript, React, Java, Spring Boot, and MySQL. Get hands-on with real projects, version control, and modern deployment workflows.",

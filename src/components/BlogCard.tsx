@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowRight, Calendar, Newspaper, User } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
+import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -69,9 +70,14 @@ export default function BlogCard({
         </div>
 
         <div className="p-5">
-          <h3 className="text-lg font-semibold group-hover:text-primary transition pb-2 line-clamp-1">
-            {metadata.title}
-          </h3>
+          <Tooltip>
+            <TooltipTrigger className="text-left">
+              <h3 className="text-lg font-semibold group-hover:text-primary transition pb-2 line-clamp-1 max-h-[2.1ch]">
+                {metadata.title}
+              </h3>
+            </TooltipTrigger>
+            <TooltipContent>{metadata.title}</TooltipContent>
+          </Tooltip>
           <div className="justify-between text-xs text-muted-foreground flex gap-2 pb-3">
             <span className="flex gap-1 items-center">
               <User className="size-3" />
