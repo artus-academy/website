@@ -33,15 +33,20 @@ export async function generateMetadata({
 
 export default function MdxLayout({ children }: { children: React.ReactNode }) {
   return (
-    <article
-      className="mx-auto px-6 max-w-7xl text-muted-foreground prose 
+    <>
+      <div
+        className={`absolute inset-0 bg-linear-to-b from-primary/10 via-background to-background pointer-events-none z-0 max-h-96 top-16`}
+      />
+      <article
+        className="relative mx-auto text-muted-foreground prose 
       prose-a:text-foreground prose-a:hover:text-primary prose-a:underline prose-a:transition-all
       prose-strong:text-foreground prose-strong:font-semibold 
       prose-headings:mt-8 prose-headings:font-semibold prose-headings:text-foreground 
-      prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl 
-     prose-h4:text-xl prose-h5:text-lg prose-h6:font-semibold"
-    >
-      {children}
-    </article>
+      prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-1xl 
+     prose-h4:text-lg prose-h5:font-semibold prose-h6:font-semibold"
+      >
+        {children}
+      </article>
+    </>
   );
 }

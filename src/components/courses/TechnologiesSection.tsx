@@ -13,7 +13,7 @@ export default function TechnologiesSection({
     viewport: { once: true },
   };
   return (
-    <section className="container py-16">
+    <section className="py-16">
       <motion.div {...fadeUp} className="text-center space-y-2 mb-8">
         <h2 className="text-3xl font-bold">Technologies & Tools</h2>
       </motion.div>

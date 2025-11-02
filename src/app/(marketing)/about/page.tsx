@@ -167,7 +167,7 @@ export default function AboutPage() {
           Trusted by 70+ Brands & Businesses
         </h3>
 
-        <div className="relative overflow-x-auto overflow-y-hidden">
+        <div className="relative overflow-hidden">
           {/* Gradient fade edges */}
           <div className="pointer-events-none absolute inset-y-0 left-0 w-12 md:w-24 bg-linear-to-r from-background to-transparent z-10" />
           <div className="pointer-events-none absolute inset-y-0 right-0 w-12 md:w-24 bg-linear-to-l from-background to-transparent z-10" />

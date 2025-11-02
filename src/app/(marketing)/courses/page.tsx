@@ -77,7 +77,7 @@ export default function CoursesPage() {
                       <div className="flex items-center gap-2">
                         <div
                           className={cn(
-                            "p-2 rounded-lg bg-gradient-to-r shadow-sm transition-colors",
+                            "p-2 rounded-lg bg-linear-to-r shadow-sm transition-colors",
                             course.badgeLight,
                             "dark:",
                             course.badgeDark

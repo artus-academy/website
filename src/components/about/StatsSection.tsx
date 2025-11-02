@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Counter from "../Counter";
 
 const STATS = [
-  { value: 3, suffix: "+", label: "Years of Experience" },
+  { value: 5, suffix: "+", label: "Years of Experience" },
   { value: 70, suffix: "+", label: "Successful Clients" },
   { value: 650, suffix: "+", label: "Ad Campaigns Managed" },
   { value: 10000, suffix: "+", label: "Leads Generated" },

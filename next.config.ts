@@ -4,7 +4,7 @@ import { NextConfig } from "next";
 const nextConfig: NextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   experimental: {
-    mdxRs: true, // ✅ Required for modern MDX compilation
+    mdxRs: true,
   },
 };
 
