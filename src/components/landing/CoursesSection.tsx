@@ -94,7 +94,7 @@ export default function CoursesSection() {
                 course.border
               )}
             >
-              {/* Animated background glow — light & dark mode variants */}
+              {/* Animated background glow light & dark mode variants */}
               <div
                 className={cn(
                   "absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 blur-2xl transition duration-500",
@@ -107,7 +107,7 @@ export default function CoursesSection() {
                 <div className="flex items-center gap-2">
                   <div
                     className={cn(
-                      "p-2 rounded-lg bg-gradient-to-r shadow-sm transition-colors",
+                      "p-2 rounded-lg bg-linear-to-r shadow-sm transition-colors",
                       course.badgeLight,
                       "dark:",
                       course.badgeDark

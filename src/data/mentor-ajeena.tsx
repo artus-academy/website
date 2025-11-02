@@ -5,7 +5,7 @@ import { DigitalMarketingBadge } from "@/components/CourseBadges";
 export const ajeena: Mentor = {
   name: "Ajeena Ali",
   image: "/images/mentor-ajeena.webp",
-  title: "Senior Software Engineer (ex-Oracle)",
+  title: "CEO Artus Brand",
   badge: <DigitalMarketingBadge />,
   description: (
     <>

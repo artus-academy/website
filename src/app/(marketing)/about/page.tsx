@@ -214,7 +214,7 @@ export default function AboutPage() {
             Our Training Approach
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            We focus on real, practical way of learning — where students build,
+            We focus on real, practical way of learning. Where students build,
             create, and grow with clear mentorship and structured skill
             development.
           </p>
@@ -225,7 +225,7 @@ export default function AboutPage() {
             {
               title: "Project-Based Learning",
               icon: Code2,
-              desc: "Learn by building real applications and campaigns — not just theory.",
+              desc: "Learn by building real applications and campaigns, not just theory.",
             },
             {
               title: "Mentor Guided Growth",

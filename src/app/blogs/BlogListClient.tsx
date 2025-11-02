@@ -1,18 +1,19 @@
 "use client";
 
 import { easeOut, motion } from "framer-motion";
-import Link from "next/link";
-import Image from "next/image";
-import { Calendar, User } from "lucide-react";
+import BreadcrumbList from "@/components/BreadcrumbList";
+import BlogCard from "@/components/BlogCard";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  show: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.08, duration: 0.6, ease: easeOut },
-  }),
-};
+const links = [
+  {
+    href: "/",
+    label: "Home",
+  },
+  {
+    href: "/blogs",
+    label: "Blogs",
+  },
+];
 
 export default function BlogListClient({
   posts,
@@ -23,83 +24,41 @@ export default function BlogListClient({
       title: string;
       description: string;
       date: string;
-      banner?: string;
       author: { name: string };
+      banner?: string;
+      category?: string;
     };
   }>;
 }) {
   return (
     <section className="relative">
       <div className="absolute inset-0 bg-linear-to-b from-primary/10 via-background to-background pointer-events-none z-0" />
-      <div className="max-w-7xl mx-auto px-6 py-20 space-y-12 relative z-10">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
+      <div className="max-w-7xl mx-auto px-4 md:px-6 pb-20 relative z-10">
+        <BreadcrumbList
+          links={links}
+          className="justify-center flex md:pt-12 md:pb-10 pt-6 pb-5"
+        />
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold text-center tracking-tight"
+          transition={{ duration: 0.6, ease: easeOut }}
+          className="text-center max-w-3xl mx-auto space-y-4 z-10 pb-12"
         >
-          Articles & Insights
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center text-muted-foreground max-w-2xl mx-auto"
-        >
-          Learn Web Development, Digital Marketing, Career Strategy, and more.
-          Written by mentors at ArtUs Academy.
-        </motion.p>
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+            Articles & <span className="text-primary">Insights</span>
+          </h1>
+          <p className="text-muted-foreground">
+            Learn Web Development, Digital Marketing, Career Strategy, and more.
+            Written by mentors at ArtUs Academy.
+          </p>
+        </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map(({ slug, metadata }, i) => (
-            <motion.div
-              key={slug}
-              custom={i}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              variants={fadeUp}
-            >
-              <Link
-                href={`/blogs/${slug}`}
-                className="group block rounded-2xl overflow-hidden border bg-card shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-              >
-                {metadata.banner && (
-                  <Image
-                    src={metadata.banner}
-                    alt={metadata.title}
-                    width={1200}
-                    height={600}
-                    className="h-48 w-full object-cover transition duration-500 group-hover:scale-110"
-                  />
-                )}
-
-                <div className="p-5 space-y-3">
-                  <h2 className="text-lg font-semibold group-hover:text-primary transition">
-                    {metadata.title}
-                  </h2>
-
-                  <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
-                    {metadata.description}
-                  </p>
-
-                  <div className="justify-between text-xs text-muted-foreground pt-2 flex gap-2">
-                    <span className="flex gap-1 items-center">
-                      <Calendar className="size-3" />{" "}
-                      {new Date(metadata.date).toLocaleDateString()}
-                    </span>
-                    <span className="flex gap-1 items-center">
-                      <User className="size-3" />
-                      {metadata.author.name}
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
+            <BlogCard key={slug} slug={slug} metadata={metadata} position={i} />
           ))}
         </div>
-        <span className="flex justify-center text-sm text-muted-foreground">
+        <span className="flex justify-center text-2xl font-extralight text-muted-foreground/40 pt-20">
           You&apos;ve reached the end
         </span>
       </div>

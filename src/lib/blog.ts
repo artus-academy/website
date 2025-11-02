@@ -5,7 +5,7 @@ export async function getAllBlogs() {
   const blogDir = path.join(process.cwd(), "src/blogs");
   const files = fs.readdirSync(blogDir).filter((file) => file.endsWith(".mdx"));
 
-  return await Promise.all(
+  const posts = await Promise.all(
     files.map(async (filename) => {
       const slug = filename.replace(".mdx", "");
       const { metadata } = await import(`@/blogs/${slug}.mdx`);
@@ -13,4 +13,14 @@ export async function getAllBlogs() {
       return { slug, metadata };
     })
   );
+
+  return posts.sort(
+    (a, b) =>
+      new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime()
+  );
+}
+
+export async function getBlogMetadata(limit?: number) {
+  const blogs = await getAllBlogs();
+  return limit ? blogs.slice(0, limit) : blogs;
 }

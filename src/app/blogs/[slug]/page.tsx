@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { env } from "@/lib/env";
 import { Calendar, User } from "lucide-react";
 import BreadcrumbList from "@/components/BreadcrumbList";
+import { dateString } from "@/lib/date";
 
 export async function generateStaticParams() {
   return (await getAllBlogs()).map((post) => ({ slug: post.slug }));
@@ -49,7 +50,7 @@ export default async function Page({
 
   return (
     <>
-      <div className="relative mx-auto px-6 max-w-4xl z-10 pt-4 md:pt-8">
+      <div className="relative mx-auto px-6 z-10 pt-4 md:pt-8">
         <BreadcrumbList links={links} className="pb-5 justify-center flex " />
 
         {metadata.banner && (
@@ -71,15 +72,13 @@ export default async function Page({
             <User className="size-4" /> {metadata.author?.name}
           </span>
           <span className="flex items-center gap-1">
-            <Calendar className="size-4" />{" "}
-            {new Date(metadata.date).toLocaleDateString()}
+            <Calendar className="size-4" /> {dateString(metadata.date)}
           </span>
         </div>
 
         <Separator className="mt-6 mb-8" />
-        <div className="">
-          <Post />
-        </div>
+
+        <Post />
 
         <div className="flex justify-start gap-4 mt-24 mb-16">
           <span className="mr-1">Share on:</span>

@@ -10,14 +10,30 @@ import { cn } from "@/lib/utils";
 import { ApplyNowDialog } from "@/components/ApplyNowDialog";
 import { Button } from "@/components/ui/button";
 import { courses } from "@/data/courses";
+import BreadcrumbList from "@/components/BreadcrumbList";
+
+const links = [
+  {
+    href: "/",
+    label: "Home",
+  },
+  {
+    href: "/courses",
+    label: "Courses",
+  },
+];
 
 export default function CoursesPage() {
   return (
     <>
-      <section className="relative pt-20 md:pt-28 mb-20 px-6">
+      <section className="relative mb-20 px-6">
         {/* Soft Gradient Background */}
         <div className="absolute inset-0 bg-linear-to-b from-primary/10 via-background to-background pointer-events-none" />
 
+        <BreadcrumbList
+          links={links}
+          className="justify-center flex md:pt-12 md:pb-10 pt-6 pb-5"
+        />
         <div className="container relative z-10 mx-auto space-y-14">
           {/* Header */}
           <motion.div

@@ -106,7 +106,7 @@ export const digitalMarketing: Course = {
       role: "Digital Marketing Course",
       avatar: "/images/testimonials/sandra.png",
       quote:
-        "The live projects and mentor sessions gave me real agency experience. Running actual ad campaigns for clients made all the difference — this wasn’t just theory.",
+        "The live projects and mentor sessions gave me real agency experience. Running actual ad campaigns for clients made all the difference, this wasn't just theory.",
     },
     {
       name: "Rahul V.",
@@ -120,7 +120,7 @@ export const digitalMarketing: Course = {
       role: "Digital Marketing Course",
       avatar: "/images/testimonials/adithya.png",
       quote:
-        "Artus Academy made learning marketing fun and real. I got to work on influencer campaigns and ad reports — exactly what I needed to start my career.",
+        "Artus Academy made learning marketing fun and real. I got to work on influencer campaigns and ad reports. Exactly what I needed to start my career.",
     },
   ],
 };

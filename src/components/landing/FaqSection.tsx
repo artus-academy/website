@@ -123,7 +123,8 @@ export default function FAQSection({ className }: { className?: string }) {
           <div className="flex items-center gap-3">
             <HelpCircle className="h-5 w-5 text-muted-foreground" />
             <p className="text-sm text-muted-foreground">
-              Still have questions? We’re happy to help on WhatsApp or Email.
+              Still have questions? We&apos;re happy to help on WhatsApp or
+              Email.
             </p>
           </div>
           <div className="flex gap-2">
