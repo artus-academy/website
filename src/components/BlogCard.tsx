@@ -6,6 +6,7 @@ import { ArrowRight, Calendar, Newspaper, User } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
+import { BlogPost } from "@/lib/blog";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -23,14 +24,7 @@ export default function BlogCard({
 }: {
   slug: string;
   position: number;
-  metadata: {
-    title: string;
-    description: string;
-    date: string;
-    author: { name: string };
-    category?: string;
-    banner?: string;
-  };
+  metadata: BlogPost;
 }) {
   return (
     <motion.div

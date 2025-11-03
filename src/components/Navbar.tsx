@@ -191,7 +191,7 @@ export default function Navbar() {
               </Button>
             </SheetTrigger>
           </div>
-          <SheetContent side="right" className="w-64 px-3">
+          <SheetContent side="right" className="w-64 px-3 z-52">
             <SheetHeader className="sr-only">
               <SheetTitle>Navigation Menu</SheetTitle>
               <SheetDescription>Primary site navigation</SheetDescription>

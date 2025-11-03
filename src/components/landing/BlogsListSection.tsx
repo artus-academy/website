@@ -6,21 +6,14 @@ import { Button } from "@/components/ui/button";
 import { ApplyNowDialog } from "../ApplyNowDialog";
 import Link from "next/link";
 import BlogCard from "../BlogCard";
+import { BlogPost } from "@/lib/blog";
 
 export default function BlogListSection({
   data,
 }: {
   data: {
     slug: string;
-
-    metadata: {
-      title: string;
-      description: string;
-      date: string;
-      author: { name: string };
-      category?: string;
-      banner?: string;
-    };
+    metadata: BlogPost;
   }[];
 }) {
   return (

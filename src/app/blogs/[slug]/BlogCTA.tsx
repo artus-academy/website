@@ -15,11 +15,14 @@ import { cn } from "@/lib/utils";
 export function BlogCTA() {
   return (
     <section className="mt-12 border-t pt-4">
-      <h2 className="text-center text-2xl md:text-3xl font-bold mb-10">
+      <h2
+        className="text-center text-2xl md:text-3xl font-bold mb-10"
+        data-toc-exclude={true}
+      >
         Ready to Learn With <span className="text-primary">Artus Academy</span>?
       </h2>
 
-      <div className="grid gap-3 mx-auto mb-12">
+      <div className="grid gap-3 xl:grid-cols-2 mx-auto mb-12">
         {Object.values(courses).map((course) => (
           <Card
             key={course.id}
@@ -46,7 +49,7 @@ export function BlogCTA() {
                 <course.icon className="w-5 h-5" />
               </div>
               <span>
-                <CardTitle className="flex gap-2 items-center">
+                <CardTitle className="flex gap-2 items-center mb-1 leading-snug">
                   {course.title}
                 </CardTitle>
                 <CardDescription>{course.tagline}</CardDescription>

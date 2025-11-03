@@ -37,16 +37,7 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
       <div
         className={`absolute inset-0 bg-linear-to-b from-primary/10 via-background to-background pointer-events-none z-0 max-h-96 top-16`}
       />
-      <article
-        className="relative w-full mx-auto dark:prose-invert prose 
-      prose-a:text-foreground prose-a:hover:text-primary prose-a:underline prose-a:transition-all
-      prose-strong:font-medium prose-p:font-light prose-p:tracking-wide
-      prose-headings:mt-8 prose-headings:font-semibold prose-headings:text-foreground 
-      prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-1xl 
-     prose-h4:text-lg prose-h5:font-semibold prose-h6:font-semibold"
-      >
-        {children}
-      </article>
+      {children}
     </>
   );
 }

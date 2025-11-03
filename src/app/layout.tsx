@@ -31,6 +31,7 @@ export const metadata: Metadata = {
     description: "Web Dev + Digital Marketing in a modern, hands-on program.",
     url: "https://artusacademy.com",
     siteName: "ArtUs Academy",
+    images: [{ url: "/images/banner.png" }],
   },
   twitter: {
     card: "summary_large_image",

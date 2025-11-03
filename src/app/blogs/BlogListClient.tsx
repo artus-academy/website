@@ -4,6 +4,7 @@ import { easeOut, motion } from "framer-motion";
 import BreadcrumbList from "@/components/BreadcrumbList";
 import BlogCard from "@/components/BlogCard";
 import CTACommon from "@/components/CTACommon";
+import { BlogPost } from "@/lib/blog";
 
 const links = [
   {
@@ -21,14 +22,7 @@ export default function BlogListClient({
 }: {
   posts: Array<{
     slug: string;
-    metadata: {
-      title: string;
-      description: string;
-      date: string;
-      author: { name: string };
-      banner?: string;
-      category?: string;
-    };
+    metadata: BlogPost;
   }>;
 }) {
   return (

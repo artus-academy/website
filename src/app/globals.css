@@ -131,8 +131,17 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .animate-marquee {
   display: flex;
   white-space: nowrap;
   animation: marquee 20s linear infinite;
+}
+
+.prose h2,
+.prose h3 {
+  scroll-margin-top: 90px;
 }
