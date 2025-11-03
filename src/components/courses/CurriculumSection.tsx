@@ -18,8 +18,10 @@ import { Syllabus } from "@/data/courses";
 
 export default function CurriculumSection({
   syllabus,
+  section,
 }: {
   syllabus: Syllabus[];
+  section: string;
 }) {
   const fadeUp = {
     initial: { opacity: 0, y: 20 },
@@ -43,7 +45,7 @@ export default function CurriculumSection({
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto">
             A structured roadmap designed to take you from beginner to
-            industry-ready developer.
+            industry-ready {section}.
           </p>
         </motion.div>
       </motion.div>

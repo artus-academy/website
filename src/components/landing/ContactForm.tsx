@@ -1,6 +1,5 @@
 "use client";
 
-import * as React from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -37,7 +36,6 @@ import {
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 import { toast } from "sonner";
 import { Label } from "../ui/label";
-import { sleep } from "@/lib/utils";
 import ButtonLoading from "../ui/button-loading";
 
 const phoneRegex = /^[0-9+\-\s()]{7,15}$/;
@@ -61,21 +59,21 @@ export default function ContactForm() {
       email: "",
       phone: "",
       course: "",
-      mode: "online",
+      mode: "offline",
     },
     mode: "onTouched",
   });
 
   const submitValues = async (data: ContactFormValues) => {
-    // Example: POST to your API route
-    // await fetch("/api/applications", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify(values),
-    // });
+    await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        type: "Book free class",
+        ...data,
+      }),
+    });
 
-    console.log("Mocking the submission of ", data);
-    await sleep(2000);
     form.reset();
   };
 

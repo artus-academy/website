@@ -32,7 +32,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "sonner";
-import { sleep } from "@/lib/utils";
 import { ScrollArea } from "./ui/scroll-area";
 import Link from "next/link";
 import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
@@ -79,21 +78,21 @@ export function ApplyNowDialog({
       qualification: "",
       experienceYears: 0,
       course: "",
-      mode: "online",
+      mode: "offline",
     },
     mode: "onTouched",
   });
 
   const submitValues = async (data: ApplyFormValues) => {
-    // Example: POST to your API route
-    // await fetch("/api/applications", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify(values),
-    // });
+    await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        type: "Apply now",
+        ...data,
+      }),
+    });
 
-    console.log("Mocking the submission of ", data);
-    await sleep(2000);
     setOpen(false);
     form.reset();
   };

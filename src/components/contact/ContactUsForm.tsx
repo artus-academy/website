@@ -15,7 +15,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { sleep } from "@/lib/utils";
 import { Field, FieldDescription, FieldGroup } from "../ui/field";
 import {
   InputGroup,
@@ -52,15 +51,15 @@ export default function ContactUsForm() {
   });
 
   const submitValues = async (values: ContactFormValues) => {
-    // Example: POST to your API route
-    // await fetch("/api/applications", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify(values),
-    // });
+    await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        type: "Contact us",
+        ...values,
+      }),
+    });
 
-    console.log("Mocking the submission of ", values);
-    await sleep(2000);
     form.reset();
   };
 

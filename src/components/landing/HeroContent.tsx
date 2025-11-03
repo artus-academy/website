@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Zap, ShieldCheck, Play, Heart, Star } from "lucide-react";
+import { Zap, ShieldCheck, Play, Heart } from "lucide-react";
 import {
   motion,
   useReducedMotion,
@@ -114,7 +114,7 @@ export function HeroContent() {
             >
               <span className="pt-5 font-light text-lg">
                 Next batch starts in{" "}
-                <span className="text-primary font-medium">NOVEMBER</span>
+                <span className="text-primary font-medium">DECEMBER</span>
               </span>
             </motion.div>
 

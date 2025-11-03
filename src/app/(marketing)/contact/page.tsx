@@ -58,9 +58,7 @@ export default function ContactPage() {
             <ContactInfo
               icon={Mail}
               text={
-                <a href="mailto:artusacademy@gmail.com">
-                  artusacademy@gmail.com
-                </a>
+                <a href="mailto:info@artusacademy.com">info@artusacademy.com</a>
               }
             />
             <ContactInfo icon={Clock} text="Mon – Sat : 9:30 AM – 6:00 PM" />

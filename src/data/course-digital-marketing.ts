@@ -38,12 +38,6 @@ export const digitalMarketing: Course = {
       label: "Month 2",
       title: "Live Projects & Implementation",
       points: [
-        "Variables, Functions, Scope & Events",
-        "DOM Manipulation & Browser APIs",
-        "ES6+ Features, Async/Await, Fetch API",
-        "JSON, LocalStorage & Form Handling",
-      ],
-      projects: [
         "Google Ads Campaign Execution",
         "SEO for E-Commerce",
         "Social Media Brand Growth",
@@ -58,7 +52,6 @@ export const digitalMarketing: Course = {
         "Work on Real Brand Projects",
         "Portfolio, Resume, Job Readiness",
       ],
-      projects: ["Dashboard App", "E-Commerce Frontend", "Social Feed App"],
     },
   ],
   achievements: {

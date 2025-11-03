@@ -41,7 +41,10 @@ export default function FullStackCoursePage() {
 
         <OverviewSection overview={courses.webDevelopment.overview} />
 
-        <CurriculumSection syllabus={courses.webDevelopment.syllabus} />
+        <CurriculumSection
+          syllabus={courses.webDevelopment.syllabus}
+          section="developer"
+        />
 
         <MentorSection mentors={courses.webDevelopment.mentors} />
 

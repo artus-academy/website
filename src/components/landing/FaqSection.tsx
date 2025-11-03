@@ -138,7 +138,7 @@ export default function FAQSection({ className }: { className?: string }) {
               </a>
             </Button>
             <Button size="sm" asChild>
-              <a href="mailto:artusacademy@gmail.com">Email Us</a>
+              <a href="mailto:info@artusacademy.com">Email Us</a>
             </Button>
           </div>
         </motion.div>

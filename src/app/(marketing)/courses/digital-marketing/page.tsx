@@ -42,7 +42,10 @@ export default function DigitalMarketingCoursePage() {
 
         <OverviewSection overview={courses.digitalMarketing.overview} />
 
-        <CurriculumSection syllabus={courses.digitalMarketing.syllabus} />
+        <CurriculumSection
+          syllabus={courses.digitalMarketing.syllabus}
+          section="digital marketer"
+        />
 
         <MentorSection mentors={courses.digitalMarketing.mentors} />
 
