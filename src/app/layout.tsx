@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist } from "next/font/google";
 import Footer from "@/components/Footer";
 // import PageTransition from "@/components/PageTransition";
@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { env } from "@/lib/env";
+import SiteLoader from "@/components/SiteLoader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,6 +21,7 @@ const geistSans = Geist({
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.siteUrl),
+  authors: [{ name: "Artus Academy", url: "https://artusacademy.com" }],
   title: {
     default: "ArtUs Academy - Web Development & Digital Marketing",
     template: "%s • ArtUs Academy",
@@ -42,6 +44,13 @@ export const metadata: Metadata = {
   icons: { icon: "/favicon.ico" },
 };
 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#6C47FF" },
+    { media: "(prefers-color-scheme: dark)", color: "#1A1A1A" },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -56,6 +65,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <SiteLoader />
           <Toaster richColors />
           <Navbar />
           <main className="min-h-screen">{children}</main>
