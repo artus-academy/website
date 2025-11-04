@@ -71,6 +71,19 @@ const socials: Social[] = [
     href: "https://www.linkedin.com/company/artus-academy",
     label: "LinkedIn",
   },
+  {
+    icon: (
+      <Image
+        src="/images/tech/reddit.png"
+        height={50}
+        width={50}
+        alt="X logo"
+        className="size-5 invert dark:invert-0 saturate-0"
+      />
+    ),
+    href: "https://www.reddit.com/r/ArtUsAcademy/",
+    label: "Reddit",
+  },
 ];
 
 const containerVariants: Variants = {

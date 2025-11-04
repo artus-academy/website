@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "https://artusacademy.com",
     siteName: "ArtUs Academy",
-    title: "ArtUs Academy — Learn by Building",
+    title: "ArtUs Academy - Learn by Building",
     description:
       "Learn Web Development and Digital Marketing through real-world projects, expert mentors, and job-ready training in Kochi.",
     images: [{ url: "/images/banner.png" }],
