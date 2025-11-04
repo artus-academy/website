@@ -12,6 +12,8 @@ import AchievementsSection from "@/components/courses/AchievementsSection";
 import MentorSection from "@/components/courses/MentorSection";
 import TechnologiesSection from "@/components/courses/TechnologiesSection";
 import BreadcrumbList from "@/components/BreadcrumbList";
+import { StructuredData } from "@/components/StructuredData";
+import { digitalMarketingCourseSchema } from "@/data/schema/courses";
 
 const links = [
   {
@@ -30,43 +32,46 @@ const links = [
 
 export default function DigitalMarketingCoursePage() {
   return (
-    <section className="relative px-6 pb-16 md:pb-24 w-full">
-      <div className="absolute inset-0 bg-linear-to-b from-pink-500/10 via-background to-background pointer-events-none z-0 max-h-96" />
+    <>
+      <StructuredData data={digitalMarketingCourseSchema} />
+      <section className="relative px-6 pb-16 md:pb-24 w-full">
+        <div className="absolute inset-0 bg-linear-to-b from-pink-500/10 via-background to-background pointer-events-none z-0 max-h-96" />
 
-      <BreadcrumbList
-        links={links}
-        className="justify-center flex md:pt-12 md:pb-10 pt-6 pb-5 relative z-10"
-      />
-      <div className="max-w-7xl mx-auto relative z-10 space-y-14">
-        <TitleSection {...courses.digitalMarketing} />
-
-        <OverviewSection overview={courses.digitalMarketing.overview} />
-
-        <CurriculumSection
-          syllabus={courses.digitalMarketing.syllabus}
-          section="digital marketer"
+        <BreadcrumbList
+          links={links}
+          className="justify-center flex md:pt-12 md:pb-10 pt-6 pb-5 relative z-10"
         />
+        <div className="max-w-7xl mx-auto relative z-10 space-y-14">
+          <TitleSection {...courses.digitalMarketing} />
 
-        <MentorSection mentors={courses.digitalMarketing.mentors} />
+          <OverviewSection overview={courses.digitalMarketing.overview} />
 
-        <AchievementsSection
-          achievements={courses.digitalMarketing.achievements}
-        />
+          <CurriculumSection
+            syllabus={courses.digitalMarketing.syllabus}
+            section="digital marketer"
+          />
 
-        <TechnologiesSection
-          technologies={courses.digitalMarketing.technologies}
-        />
+          <MentorSection mentors={courses.digitalMarketing.mentors} />
 
-        <WhyUsSection whyUs={courses.digitalMarketing.whyUs} />
+          <AchievementsSection
+            achievements={courses.digitalMarketing.achievements}
+          />
 
-        <CTASection role="Digital marketer" />
+          <TechnologiesSection
+            technologies={courses.digitalMarketing.technologies}
+          />
 
-        <TestimonialsCarousel
-          testimonials={courses.digitalMarketing.testimonials}
-        />
+          <WhyUsSection whyUs={courses.digitalMarketing.whyUs} />
 
-        <MobileCTABar />
-      </div>
-    </section>
+          <CTASection role="Digital marketer" />
+
+          <TestimonialsCarousel
+            testimonials={courses.digitalMarketing.testimonials}
+          />
+
+          <MobileCTABar />
+        </div>
+      </section>
+    </>
   );
 }

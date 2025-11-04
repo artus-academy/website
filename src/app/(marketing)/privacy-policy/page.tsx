@@ -1,4 +1,5 @@
 import { B, H3, Li, P, Section, Ul } from "@/components/Para";
+import { contactInfo } from "@/data/contact";
 import Link from "next/link";
 
 export default function PrivacyPolicyPage() {
@@ -177,12 +178,12 @@ export default function PrivacyPolicyPage() {
           If you have any questions, concerns, or requests regarding this
           Privacy Policy or your personal data, please contact us at
           <Link
-            href="mailto:info@artusacademy.com"
+            href={`mailto:${contactInfo.email}`}
             target="_blank"
             rel="noreferrer noopener"
             className="hover:text-primary ml-1"
           >
-            info@artusacademy.com
+            {contactInfo.email}
           </Link>
         </P>
       </Section>

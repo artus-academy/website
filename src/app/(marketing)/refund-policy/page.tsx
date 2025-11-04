@@ -1,4 +1,5 @@
 import { B, H3, Li, P, Section, Ul } from "@/components/Para";
+import { contactInfo } from "@/data/contact";
 import Link from "next/link";
 
 export default function RefundPolicyPage() {
@@ -28,12 +29,12 @@ export default function RefundPolicyPage() {
           <Li>
             Refund requests must be made in writing via email to{" "}
             <Link
-              href="mailto:info@artusacademy.com"
+              href={`mailto:${contactInfo.email}`}
               target="_blank"
               rel="noreferrer noopener"
               className="hover:text-primary ml-1"
             >
-              info@artusacademy.com
+              {contactInfo.email}
             </Link>{" "}
             within <B>7 days</B> from the course start date.
           </Li>
@@ -90,12 +91,12 @@ export default function RefundPolicyPage() {
           For any refund requests or inquiries regarding this policy, please
           reach out to us at{" "}
           <Link
-            href="mailto:info@artusacademy.com"
+            href={`mailto:${contactInfo.email}`}
             target="_blank"
             rel="noreferrer noopener"
             className="hover:text-primary ml-1"
           >
-            info@artusacademy.com
+            {contactInfo.email}
           </Link>
           . Our support team will respond within 3-5 business days.
         </P>

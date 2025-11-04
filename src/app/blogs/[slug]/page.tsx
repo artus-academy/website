@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getAdjacentPosts, getAllBlogs } from "@/lib/blog";
+import { getAdjacentPosts, getAllBlogs, getArticleSchema } from "@/lib/blog";
 import { Separator } from "@/components/ui/separator";
 import { notFound } from "next/navigation";
 import { env } from "@/lib/env";
@@ -12,6 +12,7 @@ import { FadeIn } from "@/components/motion/FadeIn";
 import { ScrollProgress } from "@/components/blog/ScrollProgress";
 import TOC, { TOCDrawer } from "@/components/blog/TableOfContents";
 import Link from "next/link";
+import { StructuredData } from "@/components/StructuredData";
 
 export async function generateStaticParams() {
   return (await getAllBlogs()).map((post) => ({ slug: post.slug }));
@@ -38,6 +39,14 @@ export default async function Page({
 
   if (!metadata) return notFound();
 
+  const articleSchema = getArticleSchema({
+    title: metadata.title,
+    description: metadata.description,
+    datePublished: metadata.date,
+    slug,
+    banner: metadata.banner,
+  });
+
   const shareUrl = `${env.siteUrl}/blogs/${slug}`;
 
   const links = [
@@ -57,6 +66,7 @@ export default async function Page({
 
   return (
     <>
+      <StructuredData data={articleSchema} />
       <ScrollProgress />
       <div className="relative mx-auto px-6 z-10 pt-5 md:pt-8 w-fit">
         <BreadcrumbList links={links} className="pb-5 justify-start flex " />

@@ -51,3 +51,54 @@ export async function getAdjacentPosts(
     next: posts[index + 1] || null,
   };
 }
+
+export function getArticleSchema({
+  title,
+  description,
+  datePublished,
+  dateModified,
+  slug,
+  banner,
+  authorName = "ArtUs Academy",
+  authorUrl = "https://artusacademy.com",
+  siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://artusacademy.com",
+}: {
+  title: string;
+  description: string;
+  datePublished: string;
+  dateModified?: string;
+  slug: string;
+  banner?: string;
+  authorName?: string;
+  authorUrl?: string;
+  siteUrl?: string;
+}) {
+  const url = `${siteUrl}/blogs/${slug}`;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    image: banner ? `${siteUrl}${banner}` : undefined,
+    datePublished,
+    dateModified: dateModified || datePublished,
+    author: {
+      "@type": "Person",
+      name: authorName,
+      url: authorUrl,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "ArtUs Academy",
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteUrl}/logo.png`,
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": url,
+    },
+  };
+}

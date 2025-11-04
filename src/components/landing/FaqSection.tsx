@@ -12,6 +12,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { HelpCircle, MessageCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { contactInfo } from "@/data/contact";
 
 export default function FAQSection({ className }: { className?: string }) {
   return (
@@ -130,7 +131,7 @@ export default function FAQSection({ className }: { className?: string }) {
           <div className="flex gap-2">
             <Button variant="secondary" size="sm" asChild>
               <a
-                href="https://wa.me/919946699443"
+                href={`https://wa.me/${contactInfo.phone.number}`}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -138,7 +139,7 @@ export default function FAQSection({ className }: { className?: string }) {
               </a>
             </Button>
             <Button size="sm" asChild>
-              <a href="mailto:info@artusacademy.com">Email Us</a>
+              <a href={`mailto:${contactInfo.email}`}>Email Us</a>
             </Button>
           </div>
         </motion.div>

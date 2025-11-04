@@ -14,6 +14,9 @@ import {
 } from "lucide-react";
 import { motion, type Variants } from "framer-motion";
 import { Raleway } from "next/font/google";
+import { contactInfo } from "@/data/contact";
+import { ReactNode } from "react";
+import { Url } from "next/dist/shared/lib/router/router";
 
 const pages = [
   { label: "Home", href: "/" },
@@ -23,29 +26,48 @@ const pages = [
   { label: "Contact", href: "/contact" },
 ];
 
-const socials = [
+type Social = {
+  icon: ReactNode;
+  href: Url;
+  label: string;
+};
+
+const socials: Social[] = [
   {
-    icon: Github,
+    icon: <Github className="size-5" />,
     href: "https://www.github.com/artus-academy/",
     label: "Github",
   },
   {
-    icon: Instagram,
-    href: "https://www.instagram.com/artus_academy/",
-    label: "Instagram",
+    icon: (
+      <Image
+        src="/images/tech/x.svg"
+        height={50}
+        width={50}
+        alt="X logo"
+        className="size-5 invert dark:invert-0"
+      />
+    ),
+    href: "https://x.com/ArtUsAcademy/",
+    label: "X",
   },
   {
-    icon: Facebook,
-    href: "https://www.facebook.com/artusacademy/",
-    label: "Facebook",
-  },
-  {
-    icon: Youtube,
+    icon: <Youtube className="size-5" />,
     href: "https://www.youtube.com/@artusacademy",
     label: "YouTube",
   },
   {
-    icon: Linkedin,
+    icon: <Instagram className="size-5" />,
+    href: "https://www.instagram.com/artus_academy/",
+    label: "Instagram",
+  },
+  {
+    icon: <Facebook className="size-5" />,
+    href: "https://www.facebook.com/artusacademy/",
+    label: "Facebook",
+  },
+  {
+    icon: <Linkedin className="size-5" />,
     href: "https://www.linkedin.com/company/artus-academy",
     label: "LinkedIn",
   },
@@ -140,16 +162,16 @@ export default function Footer() {
         <motion.div variants={itemVariants}>
           <h4 className="font-semibold mb-3">Follow Us</h4>
           <div className="flex gap-4">
-            {socials.map(({ icon: Icon, href, label }) => (
+            {socials.map(({ icon, href, label }) => (
               <Link
-                key={href}
+                key={href.toString()}
                 href={href}
                 target="_blank"
                 rel="noreferrer noopener"
                 aria-label={label}
                 className="text-muted-foreground hover:text-primary"
               >
-                <Icon className="h-5 w-5" />
+                {icon}
               </Link>
             ))}
           </div>
@@ -164,12 +186,12 @@ export default function Footer() {
               </span>
             </Link>
             <Link
-              href="tel:919876543210"
+              href={`tel:${contactInfo.phone.number}`}
               target="_blank"
               rel="noreferrer noopener"
             >
               <span className="flex gap-x-2 items-center hover:text-primary">
-                <Phone className="size-4" /> +91 98765 43210
+                <Phone className="size-4" /> {contactInfo.phone.display}
               </span>
             </Link>
           </p>

@@ -7,6 +7,10 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { env } from "@/lib/env";
 import SiteLoader from "@/components/SiteLoader";
+import { StructuredData } from "@/components/StructuredData";
+import { organizationSchema } from "@/data/schema/organisation";
+import { localBusinessSchema } from "@/data/schema/localBusiness";
+import { ajeenaPersonSchema, nikhilPersonSchema } from "@/data/schema/mentors";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,16 +26,29 @@ export const metadata: Metadata = {
   metadataBase: new URL(env.siteUrl),
   authors: [{ name: "Artus Academy", url: "https://artusacademy.com" }],
   title: {
-    default: "ArtUs Academy - Web Development & Digital Marketing",
+    default:
+      "ArtUs Academy - Web Development & Digital Marketing Courses in Kochi",
     template: "%s • ArtUs Academy",
   },
   description:
-    "Learn Web Development and Digital Marketing with an industry-ready curriculum. Hands-on projects, mentorship, and job-ready skills.",
+    "Industry-ready Web Development and Digital Marketing courses in Kochi with real project training, expert mentorship, and job placement support.",
+  keywords: [
+    "Web Development Course Kochi",
+    "Digital Marketing Course Kochi",
+    "Full Stack Developer Training Kerala",
+    "Digital Marketing Institute Kerala",
+    "Coding Bootcamp Kochi",
+    "Online Digital Marketing Classes",
+    "Placement Training Kochi",
+  ],
   openGraph: {
-    title: "ArtUs Academy",
-    description: "Web Dev + Digital Marketing in a modern, hands-on program.",
+    type: "website",
+    locale: "en_IN",
     url: "https://artusacademy.com",
     siteName: "ArtUs Academy",
+    title: "ArtUs Academy — Learn by Building",
+    description:
+      "Learn Web Development and Digital Marketing through real-world projects, expert mentors, and job-ready training in Kochi.",
     images: [{ url: "/images/banner.png" }],
   },
   twitter: {
@@ -39,6 +56,7 @@ export const metadata: Metadata = {
     title: "ArtUs Academy",
     description:
       "Web Dev + Digital Marketing, taught by pros. Learn by building.",
+    images: [{ url: "/images/banner.png" }],
   },
   icons: { icon: "/favicon.ico" },
 };
@@ -70,6 +88,10 @@ export default function RootLayout({
           <main className="min-h-screen">{children}</main>
           <Footer />
         </ThemeProvider>
+        <StructuredData data={organizationSchema} />
+        <StructuredData data={localBusinessSchema} />
+        <StructuredData data={nikhilPersonSchema} />
+        <StructuredData data={ajeenaPersonSchema} />
       </body>
     </html>
   );

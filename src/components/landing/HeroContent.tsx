@@ -123,8 +123,7 @@ export function HeroContent() {
               className="mt-4 flex flex-wrap items-center gap-3 text-sm text-muted-foreground bg-muted/20 px-4 py-2 rounded-lg border border-muted w-fit"
             >
               <span className="flex flex-wrap gap-1 items-center justify-center">
-                We <Heart className="size-4 fill-primary stroke-primary" /> open
-                source
+                We <Heart className="size-4 fill-primary stroke-primary" />
                 <span className="font-semibold text-foreground">
                   open source
                 </span>

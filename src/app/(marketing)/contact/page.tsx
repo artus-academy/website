@@ -6,6 +6,7 @@ import { ApplyNowDialog } from "@/components/ApplyNowDialog";
 import { ReactNode } from "react";
 import ContactUsForm from "@/components/contact/ContactUsForm";
 import { Badge } from "@/components/ui/badge";
+import { contactInfo } from "@/data/contact";
 
 export default function ContactPage() {
   return (
@@ -53,15 +54,19 @@ export default function ContactPage() {
             />
             <ContactInfo
               icon={Phone}
-              text={<a href="tel:+919946699443">+91 99466 99443</a>}
+              text={
+                <a href={`tel:${contactInfo.phone.number}`}>
+                  {contactInfo.phone.display}
+                </a>
+              }
             />
             <ContactInfo
               icon={Mail}
               text={
-                <a href="mailto:info@artusacademy.com">info@artusacademy.com</a>
+                <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
               }
             />
-            <ContactInfo icon={Clock} text="Mon – Sat : 9:30 AM – 6:00 PM" />
+            <ContactInfo icon={Clock} text="Mon - Sat : 9:30 AM - 6:00 PM" />
 
             <ApplyNowDialog />
           </motion.div>
