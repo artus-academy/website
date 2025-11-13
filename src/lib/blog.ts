@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { env } from "./env";
 
 export type BlogPost = {
   title: string;
@@ -61,7 +62,7 @@ export function getArticleSchema({
   banner,
   authorName = "ArtUs Academy",
   authorUrl = "https://artusacademy.com",
-  siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://artusacademy.com",
+  siteUrl = env.siteUrl || "https://artusacademy.com",
 }: {
   title: string;
   description: string;

@@ -33,6 +33,8 @@ export const metadata: Metadata = {
   description:
     "Industry-ready Web Development and Digital Marketing courses in Kochi with real project training, expert mentorship, and job placement support.",
   keywords: [
+    "ArtUs Academy",
+    "Learn Web development",
     "Web Development Course Kochi",
     "Digital Marketing Course Kochi",
     "Full Stack Developer Training Kerala",

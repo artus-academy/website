@@ -22,6 +22,7 @@ import { ReactNode, useState } from "react";
 import Image from "next/image";
 import { Raleway } from "next/font/google";
 import {
+  Briefcase,
   ChevronDown,
   CircleQuestionMark,
   Globe,
@@ -79,6 +80,11 @@ const links: Link[] = [
   {
     label: "More",
     components: [
+      {
+        label: "Careers",
+        icon: <Briefcase className="size-5" />,
+        href: "/careers",
+      },
       {
         label: "FAQ",
         icon: <CircleQuestionMark className="size-5" />,

@@ -12,16 +12,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1,
     },
     {
-      url: `${siteUrl}/about`,
-      lastModified: new Date(),
-      priority: 0.6,
-    },
-    {
-      url: `${siteUrl}/courses`,
-      lastModified: new Date(),
-      priority: 0.8,
-    },
-    {
       url: `${siteUrl}/courses/web-development`,
       lastModified: new Date(),
       priority: 0.9,
@@ -30,6 +20,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${siteUrl}/courses/digital-marketing`,
       lastModified: new Date(),
       priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/courses`,
+      lastModified: new Date(),
+      priority: 0.8,
+    },
+    {
+      url: `${siteUrl}/about`,
+      lastModified: new Date(),
+      priority: 0.6,
+    },
+    {
+      url: `${siteUrl}/careers`,
+      lastModified: new Date(),
+      priority: 0.6,
     },
     {
       url: `${siteUrl}/contact`,
