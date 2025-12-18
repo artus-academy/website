@@ -65,9 +65,9 @@ export default function DigitalMarketingCoursePage() {
 
           <CTASection role="Digital marketer" />
 
-          <TestimonialsCarousel
+          {/* <TestimonialsCarousel
             testimonials={courses.digitalMarketing.testimonials}
-          />
+          /> */}
 
           <MobileCTABar />
         </div>

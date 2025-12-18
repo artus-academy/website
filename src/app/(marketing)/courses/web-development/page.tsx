@@ -64,9 +64,9 @@ export default function FullStackCoursePage() {
 
           <CTASection role="Full-Stack Developer" />
 
-          <TestimonialsCarousel
+          {/* <TestimonialsCarousel
             testimonials={courses.webDevelopment.testimonials}
-          />
+          /> */}
 
           <MobileCTABar />
         </div>
