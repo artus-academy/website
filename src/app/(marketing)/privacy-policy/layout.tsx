@@ -1,4 +1,4 @@
-import { DefaultLayout } from "@/app/layout";
+import { DefaultLayout } from "@/components/DefaultLayout";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

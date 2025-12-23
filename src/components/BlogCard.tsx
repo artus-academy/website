@@ -37,7 +37,7 @@ export default function BlogCard({
     >
       <Link
         href={`/blogs/${slug}`}
-        className="group block rounded-2xl overflow-hidden border bg-card shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+        className="group flex flex-col rounded-2xl overflow-hidden border bg-card shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full"
       >
         <div className="h-48 w-full relative">
           {metadata.category && (
@@ -63,7 +63,7 @@ export default function BlogCard({
           )}
         </div>
 
-        <div className="p-5">
+        <div className="p-5 flex flex-col flex-1">
           <Tooltip>
             <TooltipTrigger className="text-left">
               <h3 className="text-lg font-semibold group-hover:text-primary transition pb-2 line-clamp-1 max-h-[2.1ch]">
@@ -82,7 +82,7 @@ export default function BlogCard({
             </span>
           </div>
 
-          <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
+          <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3 flex-1">
             {metadata.description}
           </p>
           <div className="text-right">

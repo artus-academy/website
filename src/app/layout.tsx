@@ -98,7 +98,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-export function DefaultLayout({ children }: { children: React.ReactNode }) {
-  return children;
-}

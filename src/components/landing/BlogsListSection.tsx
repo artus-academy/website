@@ -40,7 +40,7 @@ export default function BlogListSection({
       </motion.div>
 
       {/* Blog Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl items-stretch">
         {data.map((blog, i) => (
           <BlogCard
             key={blog.slug}
