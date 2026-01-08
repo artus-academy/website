@@ -116,18 +116,23 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur px-2 sm:px-6 md:px-10">
       <div className="flex h-16 items-center justify-between w-full">
-        <Link href="/" className="flex items-center gap-x-2 font-bold text-xl">
+        <Link href="/" className="flex items-center gap-x-2">
           <Image
             src="/logo.png"
             alt="ArtUs Academy logo"
-            className="dark:invert-100 dark:saturate-0 dark:brightness-200"
+            className="dark:invert-100 dark:saturate-0"
             width={50}
             height={50}
             priority
           />
-          <span className={`${raleway.className} font-bold`}>
-            ArtUs Academy
-          </span>
+          <div className={`${raleway.className} flex flex-col`}>
+            <span className="font-bold text-xl leading-none">
+              ArtUs Academy
+            </span>
+            <span className="font-thin text-xs text-muted-foreground">
+              Artists in Education
+            </span>
+          </div>
         </Link>
         {/* Desktop nav */}
 
@@ -163,7 +168,7 @@ export default function Navbar() {
                 <NavigationMenuContent>
                   <ul
                     className={cn(
-                      "grid w-[400px] gap-2 grid-cols-1",
+                      "grid w-100 gap-2 grid-cols-1",
                       l.componentClass
                     )}
                   >

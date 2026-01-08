@@ -57,7 +57,7 @@ export default function WhyUsSection() {
         <div className="text-center mb-14 space-y-3">
           <Badge variant="secondary">Why Us</Badge>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
-            What Makes <span className="text-primary">Artus Academy</span>{" "}
+            What Makes <span className="text-primary">ArtUs Academy</span>{" "}
             Special?
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -94,7 +94,7 @@ export default function WhyUsSection() {
                 <div
                   className={cn(
                     "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-3xl",
-                    `bg-gradient-to-r ${feature.color}`
+                    `bg-linear-to-r ${feature.color}`
                   )}
                 />
 
@@ -102,7 +102,7 @@ export default function WhyUsSection() {
                 <div className="relative z-10 flex flex-col h-full gap-4">
                   <div
                     className={cn(
-                      "inline-flex w-12 h-12 items-center justify-center rounded-lg bg-gradient-to-r text-white shadow-lg",
+                      "inline-flex w-12 h-12 items-center justify-center rounded-lg bg-linear-to-r text-white shadow-lg",
                       feature.color
                     )}
                   >

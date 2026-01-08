@@ -24,7 +24,7 @@ const geistSans = Geist({
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.siteUrl),
-  authors: [{ name: "Artus Academy", url: "https://artusacademy.com" }],
+  authors: [{ name: "ArtUs Academy", url: "https://artusacademy.com" }],
   title: {
     default:
       "ArtUs Academy - Web Development & Digital Marketing Courses in Kochi",

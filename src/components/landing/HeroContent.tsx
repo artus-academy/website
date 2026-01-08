@@ -13,6 +13,7 @@ import { Button } from "../ui/button";
 import Link from "next/link";
 import { ApplyNowDialog } from "../ApplyNowDialog";
 import GitHubStars from "./GithubStarts";
+import { getNextMonth } from "@/lib/date";
 
 export function HeroContent() {
   const prefersReduced = useReducedMotion();
@@ -114,7 +115,9 @@ export function HeroContent() {
             >
               <span className="pt-5 font-light text-lg">
                 Next batch starts in{" "}
-                <span className="text-primary font-medium">DECEMBER</span>
+                <span className="text-primary font-medium uppercase">
+                  {getNextMonth()}
+                </span>
               </span>
             </motion.div>
 

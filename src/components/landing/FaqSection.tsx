@@ -78,8 +78,7 @@ export default function FAQSection({ className }: { className?: string }) {
               <AccordionTrigger>Is it online or offline?</AccordionTrigger>
               <AccordionContent>
                 We offer both options, attend offline sessions at our Kakkanad
-                campus or join interactive online classes. You can switch
-                anytime.
+                campus or join interactive online classes.
               </AccordionContent>
             </AccordionItem>
 

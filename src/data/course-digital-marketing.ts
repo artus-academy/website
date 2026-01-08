@@ -114,7 +114,7 @@ export const digitalMarketing: Course = {
       role: "Digital Marketing Course",
       avatar: "/images/testimonials/adithya.png",
       quote:
-        "Artus Academy made learning marketing fun and real. I got to work on influencer campaigns and ad reports. Exactly what I needed to start my career.",
+        "ArtUs Academy made learning marketing fun and real. I got to work on influencer campaigns and ad reports. Exactly what I needed to start my career.",
     },
   ],
 };

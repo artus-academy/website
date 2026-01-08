@@ -55,7 +55,7 @@ export default function AboutPage() {
       >
         <h2 className="text-3xl md:text-4xl font-bold">Who We Are</h2>
         <p className="text-muted-foreground leading-relaxed text-lg">
-          <span className="text-primary font-medium">Artus Academy</span> is a
+          <span className="text-primary font-medium">ArtUs Academy</span> is a
           place for learners who want to build real skills and real careers. We
           bridge the gap between education and the industry by training students
           through{" "}
@@ -127,7 +127,7 @@ export default function AboutPage() {
           <Badge variant="outline" className="rounded-full px-3 py-1">
             In Collaboration With
           </Badge>
-          <h2 className="text-3xl font-bold tracking-tight">Artus Brand</h2>
+          <h2 className="text-3xl font-bold tracking-tight">ArtUs Brand</h2>
           <p className="text-muted-foreground">
             A Digital Marketing agency with{" "}
             <b className="font-medium text-foreground">3+ years</b> of industry
@@ -139,7 +139,7 @@ export default function AboutPage() {
 
           <Link href="https://artusbrand.com" target="_blank">
             <Button>
-              <ExternalLink /> Visit Artus Brand
+              <ExternalLink /> Visit ArtUs Brand
             </Button>
           </Link>
         </div>
@@ -151,7 +151,7 @@ export default function AboutPage() {
         >
           <Image
             src="/images/artus-brand.png"
-            alt="Artus Brand"
+            alt="ArtUs Brand"
             height={240}
             width={240}
             className="rounded-xl object-contain dark:invert-100"

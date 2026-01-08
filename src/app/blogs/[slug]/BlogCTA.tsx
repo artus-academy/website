@@ -19,7 +19,7 @@ export function BlogCTA() {
         className="text-center text-2xl md:text-3xl font-bold mb-10"
         data-toc-exclude={true}
       >
-        Ready to Learn With <span className="text-primary">Artus Academy</span>?
+        Ready to Learn With <span className="text-primary">ArtUs Academy</span>?
       </h2>
 
       <div className="grid gap-3 xl:grid-cols-2 mx-auto mb-12">

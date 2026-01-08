@@ -44,6 +44,6 @@ export default function ShareSection({
   );
 }
 
-const socialTags = (tags: string[]) => ["Artus", "ArtusAcademy", ...tags];
+const socialTags = (tags: string[]) => ["ArtUs", "ArtUsAcademy", ...tags];
 
 export const dynamicParams = false;

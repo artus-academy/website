@@ -6,6 +6,8 @@ import { cn } from "@/lib/utils";
 import WhoIsThisFor from "./WhoIsThisFor";
 import { Badge } from "../ui/badge";
 import Link from "next/link";
+import Image from "next/image";
+import ArtusBrand from "./ArtusBrand";
 
 export default function TrustedAcademySection({
   className,
@@ -15,7 +17,7 @@ export default function TrustedAcademySection({
   return (
     <motion.section
       className={cn(
-        "relative flex flex-col items-center justify-center text-center py-24 md:py-32 px-6  bg-linear-to-b from-muted/20 to-background overflow-x-hidden",
+        "relative flex flex-col items-center justify-center text-center pb-24 md:pb-32 pt-12 md:pt-16 px-6 bg-linear-to-b from-muted/20 to-background overflow-x-hidden",
         className
       )}
     >
@@ -35,6 +37,8 @@ export default function TrustedAcademySection({
         />
       </div>
 
+      <ArtusBrand className="py-14 md:py-18 px-6 md:px-16" />
+
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -51,7 +55,7 @@ export default function TrustedAcademySection({
         </h2>
 
         <p className="text-muted-foreground leading-relaxed">
-          At <span className="text-primary font-medium">Artus Academy</span>, we
+          At <span className="text-primary font-medium">ArtUs Academy</span>, we
           empower learners with practical, industry-driven programs designed for
           tomorrow&apos;s careers. Whether it&apos;s{" "}
           <span className="text-foreground font-medium">
@@ -88,7 +92,7 @@ export default function TrustedAcademySection({
         <p className="text-muted-foreground leading-relaxed">
           Join our growing community of passionate learners, work on
           real-industry projects, and get personalized placement support. At
-          <span className="text-primary font-medium"> Artus Academy</span>,
+          <span className="text-primary font-medium"> ArtUs Academy</span>,
           creativity meets code - and your career begins.
         </p>
 

@@ -70,7 +70,7 @@ export default function CoursesSection() {
         </Badge>
         <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
           Learn Future-Ready Skills with{" "}
-          <span className="text-primary">Artus Academy</span>
+          <span className="text-primary">ArtUs Academy</span>
         </h2>
         <p className="text-muted-foreground max-w-2xl mx-auto">
           Designed by industry experts to help you master the skills that matter

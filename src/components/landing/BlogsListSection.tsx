@@ -31,7 +31,7 @@ export default function BlogListSection({
         </Badge>
         <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
           Insights & Tips from{" "}
-          <span className="text-primary">Artus Academy</span>
+          <span className="text-primary">ArtUs Academy</span>
         </h2>
         <p className="text-muted-foreground max-w-2xl mx-auto">
           Explore articles on web development, digital marketing, and

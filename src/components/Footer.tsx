@@ -148,10 +148,13 @@ export default function Footer() {
               <p
                 className={`${raleway.className} text-xs text-muted-foreground max-w-64`}
               >
-                Learn Web Development & Digital Marketing the modern way.
+                Artists in Education
               </p>
             </div>
           </Link>
+          <p className="text-muted-foreground text-sm max-w-64 pt-5">
+            Learn Web Development & Digital Marketing the modern way.
+          </p>
         </motion.div>
 
         {/* Quick Links */}

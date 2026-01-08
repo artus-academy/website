@@ -12,7 +12,7 @@ export default function WhyUsSection({ whyUs }: { whyUs: WhyUs }) {
   return (
     <section className="py-12">
       <motion.div {...fadeUp} className="text-center space-y-2 mb-10">
-        <h2 className="text-3xl font-bold">Why Choose Artus Academy?</h2>
+        <h2 className="text-3xl font-bold">Why Choose ArtUs Academy?</h2>
         <p className="text-muted-foreground">{whyUs.subtitle}</p>
       </motion.div>
 
