@@ -56,6 +56,7 @@ type Link = {
 
 const links: Link[] = [
   { href: "/", label: "Home" },
+  { href: "https://workshops.artusacademy.com", label: "Workshops" },
   { href: "/about", label: "About" },
   {
     href: "/courses",
