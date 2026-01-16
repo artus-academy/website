@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Geist } from "next/font/google";
 import Footer from "@/components/Footer";
 import "./globals.css";
@@ -78,6 +79,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.className}`}>
+        <Analytics />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
