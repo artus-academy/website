@@ -91,7 +91,7 @@ export default function ContactPage() {
         >
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.9945513072794!2d76.33865077592277!3d10.017307572734836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080decbab597e1%3A0x32c51551a407474e!2sArtUs%20Brand!5e0!3m2!1sen!2sin!4v1761729163201!5m2!1sen!2sin"
-            className="w-full h-[350px] md:h-[450px]"
+            className="w-full h-87.5 md:h-112.5"
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
