@@ -9,7 +9,7 @@ export type ContactInfo = {
 export const contactInfo: ContactInfo = {
   email: "info@artusacademy.com",
   phone: {
-    number: "+917034353580",
-    display: "+91 7034 3535 80",
+    number: "+917034353596",
+    display: "+91 7034 3535 96",
   },
 };

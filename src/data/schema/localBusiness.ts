@@ -3,7 +3,7 @@ export const localBusinessSchema = {
   "@type": "LocalBusiness",
   name: "ArtUs Academy",
   image: "https://artusacademy.com/images/banner.png",
-  telephone: "+91 7034353580",
+  telephone: "+91 7034353596",
   priceRange: "$$",
   address: {
     "@type": "PostalAddress",
