@@ -1,5 +1,6 @@
 import type { MDXComponents } from "mdx/types";
 import { slugify } from "./lib/slugify";
+import CodeBlock from "./components/blog/CodeBlock";
 
 const components: MDXComponents = {
   h1: ({ children }) => {
@@ -38,6 +39,7 @@ const components: MDXComponents = {
       </h4>
     );
   },
+  pre: CodeBlock as any,
 } satisfies MDXComponents;
 
 export function useMDXComponents(): MDXComponents {

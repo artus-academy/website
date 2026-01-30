@@ -145,3 +145,63 @@ html {
 .prose h3 {
   scroll-margin-top: 90px;
 }
+
+/* Ensure code blocks scroll horizontally on mobile */
+.prose pre {
+  @apply overflow-x-auto max-w-full!;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Syntax Highlighting */
+.code-block-wrapper {
+  @apply my-6 overflow-hidden rounded-xl border border-border;
+}
+
+.code-block-wrapper pre,
+.code-block-wrapper .shiki {
+  margin: 0 !important;
+  padding: 1rem !important;
+  overflow-x: auto !important;
+  max-width: 100% !important;
+  background-color: var(--shiki-light-bg) !important;
+}
+
+.shiki code {
+  display: grid;
+  min-width: 100%;
+  word-break: normal;
+  padding: 0 !important;
+  font-size: 14px;
+  line-height: 1.6;
+  font-family: var(--font-mono);
+}
+
+.shiki span {
+  color: var(--shiki-light) !important;
+}
+
+.dark .shiki {
+  background-color: var(--shiki-dark-bg) !important;
+}
+
+.dark .shiki span {
+  color: var(--shiki-dark) !important;
+}
+
+/* Override prose defaults for code and pre */
+.prose pre {
+  @apply bg-transparent! p-0!;
+}
+
+.prose code {
+  @apply px-1.5 py-0.5 rounded-md bg-muted font-normal text-primary before:content-none after:content-none;
+}
+
+.prose pre code {
+  @apply p-0 bg-transparent! text-inherit dark:text-inherit! font-normal;
+}
+
+/* Responsive images in blog */
+.prose img {
+  @apply max-w-full h-auto rounded-lg;
+}

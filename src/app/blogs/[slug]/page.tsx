@@ -68,7 +68,7 @@ export default async function Page({
     <>
       <StructuredData data={articleSchema} />
       <ScrollProgress />
-      <div className="relative mx-auto px-6 z-10 pt-5 md:pt-8 w-fit">
+      <div className="relative mx-auto px-6 z-10 pt-5 md:pt-8 max-w-fit">
         <BreadcrumbList links={links} className="pb-5 justify-start flex " />
 
         <div className="flex relative flex-col-reverse lg:flex-row">
