@@ -154,7 +154,7 @@ html {
 
 /* Syntax Highlighting */
 .code-block-wrapper {
-  @apply my-6 overflow-hidden rounded-xl border border-border;
+  @apply relative my-6 overflow-hidden rounded-xl border border-border;
 }
 
 .code-block-wrapper pre,
