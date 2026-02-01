@@ -33,10 +33,10 @@ export default async function CodeBlock({ children, ...props }: any) {
   return (
     <div className="code-block-wrapper group">
       <div className="absolute right-3 top-3 flex items-center gap-2 sm:opacity-0 group-hover:opacity-100 transition-opacity z-20">
+        <CopyButton code={code} />
         <span className="text-[10px] font-mono text-muted-foreground uppercase bg-muted/50 px-2 py-1 rounded">
           {lang}
         </span>
-        <CopyButton code={code} />
       </div>
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </div>

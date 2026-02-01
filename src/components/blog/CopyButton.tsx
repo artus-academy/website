@@ -29,7 +29,7 @@ export function CopyButton({ code }: CopyButtonProps) {
       size="icon"
       variant="ghost"
       className={cn(
-        "absolute right-3 top-3 h-8 w-8 text-muted-foreground transition-all hover:bg-muted/50 hover:text-foreground z-10",
+        "h-8 w-8 text-muted-foreground transition-all hover:bg-muted/50 hover:text-foreground z-10",
         hasCopied && "text-green-500",
       )}
       onClick={copyToClipboard}
