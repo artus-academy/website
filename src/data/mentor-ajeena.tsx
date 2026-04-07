@@ -33,7 +33,7 @@ export const ajeena: Mentor = {
     {
       icon: <Trophy className="h-4 w-4" />,
       label: "Impact",
-      value: "70+ Successfull companies",
+      value: "70+ Successful companies",
     },
   ],
   achievements: [
