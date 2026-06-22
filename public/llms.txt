@@ -1,0 +1,24 @@
+# ArtUs Academy
+
+> ArtUs Academy is a leading technology and digital career training institute in Kakkanad, Kochi, Kerala, offering hands-on, project-based courses with expert mentorship and job placement support.
+
+## Core Courses
+- [Full Stack Web Development](/courses/web-development): A 6-month comprehensive coding bootcamp covering Frontend (HTML, CSS, JS, React, Tailwind, shadcn) and Backend (Java, OOP, MySQL, Spring Boot, REST APIs, Git). Includes placement assistance, mock interviews, and EMI options.
+- [Professional Digital Marketing](/courses/digital-marketing): A 4-month practical growth marketing program covering SEO, SEM (Google Ads), SMM (Facebook/Instagram), content strategy, WordPress, Google Search Console, and Analytics with live client projects.
+
+## Key Information
+- **Location**: 3rd Floor, SF Arcade Building, Kunnumpuram, Kakkanad, Kochi, Kerala - 682030
+- **Phone**: +91 7034 3535 96
+- **Email**: info@artusacademy.com
+- **Website**: https://artusacademy.com
+- **Training Mode**: Both Online and Offline classes available.
+- **Affiliation**: In collaboration with ArtUs Brand (digital marketing agency).
+
+## Navigation & Resources
+- [Home Page](https://artusacademy.com/): Official homepage.
+- [About Us](https://artusacademy.com/about): Mission, vision, and team story.
+- [All Courses](https://artusacademy.com/courses): Course listings and options.
+- [Blogs](https://artusacademy.com/blogs): Technical and marketing articles.
+- [Careers](https://artusacademy.com/careers): Job opportunities at ArtUs Academy.
+- [Contact Us](https://artusacademy.com/contact): Inquiries and support details.
+- [Full LLM Index](/llms-full.txt): Detailed syllabus, mentors, and FAQs for LLMs.

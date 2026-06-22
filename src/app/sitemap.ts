@@ -41,10 +41,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       priority: 0.4,
     },
+    {
+      url: `${siteUrl}/blogs`,
+      lastModified: new Date(),
+      priority: 0.7,
+    },
   ];
 
   const blogPosts = (await getAllBlogs()).map(({ slug, metadata }) => ({
-    url: `${siteUrl}/blog/${slug}`,
+    url: `${siteUrl}/blogs/${slug}`,
     lastModified: metadata.date ? new Date(metadata.date) : new Date(),
     priority: 0.7,
   }));

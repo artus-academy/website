@@ -1,0 +1,85 @@
+# ArtUs Academy - Full Context & Curriculum Index
+
+> Complete detailed information about ArtUs Academy, Kochi. Designed for Large Language Models (LLMs) and search agents.
+
+---
+
+## 1. Overview & Vision
+ArtUs Academy is a trusted learning platform in Kakkanad, Kochi, Kerala, focused on bridging the gap between standard academic education and current industry demands. 
+We train students through hands-on projects, personalized career development, and real business exposure.
+
+- **Training Approach**: 
+  - **Project-Based Learning**: Students learn by building real-world applications and marketing campaigns, rather than just memorizing theory.
+  - **Mentor-Guided Growth**: Weekly one-on-one and group mentoring sessions.
+  - **Live Project Experience**: Collaboration on live client campaigns and actual software builds, in partnership with our agency branch, **ArtUs Brand**.
+  - **Career Support**: Tailored resume building, GitHub portfolio optimization, LinkedIn branding, mock interviews, and active placement assistance.
+- **Flexible Options**: Available in both **Online Classes** and **Offline Classroom** modes. Includes easy monthly EMI payment options.
+
+---
+
+## 2. Courses & Syllabus
+
+### A. Full Stack Web Development Course
+- **Duration**: 6 Months
+- **Primary Tech Stack**: HTML, CSS, JavaScript, React, Tailwind CSS, Git/GitHub, Java, MySQL, Spring Boot, Postman, Linux.
+- **Outcomes**: Confidently build, test, and deploy production-ready full-stack applications.
+
+#### Month-by-Month Syllabus:
+- **Month 1: Web Foundations & Version Control**
+  - Topics: How the Internet works, HTTP/HTTPS, DevTools, Semantic HTML, CSS layouts (Flexbox & Grid), Responsive Web Design, Linux basics, Git & GitHub.
+  - Projects: Personal Portfolio Webpage, Responsive Business Landing Page.
+- **Month 2: JavaScript & UI Development**
+  - Topics: JS Syntax, scope, events, DOM Manipulation, Browser APIs, ES6+ features, Async/Await, Fetch API, JSON, LocalStorage, Form handling.
+  - Projects: Weather App, Interactive Blog UI, JS-based Games.
+- **Month 3: React & UI Frameworks**
+  - Topics: React Components, props, state, Hooks, Context API, Next.js routing, Tailwind CSS, shadcn/ui, API integration, and error handling.
+  - Projects: Professional Dashboard, E-Commerce Frontend, Social Feed App.
+- **Month 4: Java, OOP & Databases**
+  - Topics: Java syntax, Object-Oriented Programming (OOP) concepts, Collections, Exception Handling, Streams, MySQL Database Design, JDBC, DAO patterns.
+  - Projects: CLI Employee Manager, Library Records Management System.
+- **Month 5: Spring Boot & Backend REST APIs**
+  - Topics: Spring Boot REST API Design, Dependency Injection, Beans, DTOs, Service Layer & Repositories, JWT Authentication, API Testing with Postman.
+  - Projects: Secure User Authentication API, Task Manager Backend, Blog REST Service.
+- **Month 6: Full-Stack Integration, Cloud Deployment & Placement Prep**
+  - Topics: Integrating React Frontend with Spring Boot Backend, Git branching workflow, code reviews, deploying full-stack apps to cloud platforms, resume building, mock interviews.
+  - Projects: Full-Stack Team Project presented at Demo Day.
+
+---
+
+### B. Professional Digital Marketing Course
+- **Duration**: 4 Months
+- **Primary Tools & Tech**: Google Analytics, WordPress, Canva, Meta Ads Manager, Semrush, YouTube Studio, Google Business Profile, LinkedIn, RankMath, Yoast SEO, Google Search Console, Google Trends.
+- **Outcomes**: Run complete branding, SEO, SMM, and Google Ads campaigns from scratch.
+
+#### Curriculum Modules:
+- **Month 1: Foundations & Core Skills**
+  - Topics: SEO foundations, content creation, brand building, copywriting, Facebook & Instagram marketing, WordPress website creation, personal branding, LinkedIn optimization.
+- **Month 2: Live Projects & Campaign Execution**
+  - Topics: Live Google Ads campaign execution, SEO audits & implementation for e-commerce, social media brand growth metrics, Conversion Rate Optimization (CRO), Google Analytics.
+- **Month 3: Specialization & Portfolio**
+  - Topics: Deep dive specialization (PPC / SEO / Social Media), working on actual brand projects for real business clients, resume & portfolio review, mock interviews.
+
+---
+
+## 3. Leadership & Mentors
+
+### Nikhil (Co-Founder & Web Development Mentor)
+- Experienced Software Engineer and Tech Mentor.
+- Leads the Full-Stack Web Development curriculum.
+- Focuses on clean code practices, Git workflows, and application architecture.
+
+### Ajeena (Co-Founder & Digital Marketing Mentor)
+- Digital Marketing Strategist with extensive experience.
+- Leads the Digital Marketing curriculum.
+- Specializes in brand positioning, SEO, social media growth, and paid campaigns.
+
+---
+
+## 4. Contact & Location Information
+
+- **Institute Name**: ArtUs Academy
+- **Main Address**: 3rd Floor, SF Arcade Building, Kunnumpuram, Kakkanad, Kochi, Kerala - 682030
+- **Email**: info@artusacademy.com
+- **Phone Number**: +91 7034 3535 96
+- **Website URL**: https://artusacademy.com
+- **Sister Agency**: ArtUs Brand (https://artusbrand.com) - A marketing agency growing 70+ businesses.
