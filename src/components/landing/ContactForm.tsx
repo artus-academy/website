@@ -217,6 +217,9 @@ export default function ContactForm() {
                             <SelectItem value="digital">
                               Digital Marketing (4 Months)
                             </SelectItem>
+                            <SelectItem value="video-editing">
+                              Video Editing (3 Months)
+                            </SelectItem>
                           </SelectContent>
                         </Select>
                       </FormControl>
