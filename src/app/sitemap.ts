@@ -22,6 +22,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
     },
     {
+      url: `${siteUrl}/courses/video-editing`,
+      lastModified: new Date(),
+      priority: 0.9,
+    },
+    {
       url: `${siteUrl}/courses`,
       lastModified: new Date(),
       priority: 0.8,

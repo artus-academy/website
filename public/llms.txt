@@ -5,6 +5,8 @@
 ## Core Courses
 - [Full Stack Web Development](/courses/web-development): A 6-month comprehensive coding bootcamp covering Frontend (HTML, CSS, JS, React, Tailwind, shadcn) and Backend (Java, OOP, MySQL, Spring Boot, REST APIs, Git). Includes placement assistance, mock interviews, and EMI options.
 - [Professional Digital Marketing](/courses/digital-marketing): A 4-month practical growth marketing program covering SEO, SEM (Google Ads), SMM (Facebook/Instagram), content strategy, WordPress, Google Search Console, and Analytics with live client projects.
+- [Video Editing Foundations](/courses/video-editing): A 3-month intensive, project-based program covering Adobe Premiere Pro (cutting, audio mixing, color correction) and After Effects (motion graphics, compositing, visual effects), dynamic link workflows, vertical format edits, and portfolio assembly with freelance guidance.
+
 
 ## Key Information
 - **Location**: 3rd Floor, SF Arcade Building, Kunnumpuram, Kakkanad, Kochi, Kerala - 682030

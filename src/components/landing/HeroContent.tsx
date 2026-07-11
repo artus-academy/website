@@ -73,9 +73,9 @@ export function HeroContent() {
               className="text-4xl md:text-5xl font-semibold leading-tight"
             >
               Become a{" "}
-              <span className="text-brand-600">Full-Stack Developer</span> or
-              <br className="hidden md:block" /> a{" "}
-              <span className="text-brand-600">Digital Marketer</span>
+              <span className="text-brand-600">Full-Stack Developer</span>,{" "}
+              <span className="text-brand-600">Digital Marketer</span>, or{" "}
+              <span className="text-brand-600">Video Editor</span>
             </motion.h1>
 
             <motion.p

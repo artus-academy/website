@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button } from "../ui/button";
-import { Code2, Rocket } from "lucide-react";
+import { Code2, Rocket, Film } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ApplyNowDialog } from "../ApplyNowDialog";
 
@@ -8,7 +8,7 @@ export default function CoursesSection() {
   return (
     <>
       <h2 className="text-3xl font-bold text-center">Courses We Offer</h2>
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid md:grid-cols-3 gap-8">
         <div className="border border-blue-400/30 dark:border-blue-500/30 rounded-xl p-8 bg-card hover:shadow-lg transition">
           <div className="flex items-center gap-2 mb-2">
             <div
@@ -53,6 +53,28 @@ export default function CoursesSection() {
             directly from industry professionals.
           </p>
           <Link href="courses/digital-marketing">
+            <Button variant="outline">Learn More</Button>
+          </Link>
+        </div>
+
+        <div className="border rounded-xl p-8 bg-card hover:shadow-lg transition border-purple-400/30 dark:border-purple-500/30">
+          <div className="flex items-center gap-2 mb-2">
+            <div
+              className={cn(
+                "p-2 rounded-lg bg-linear-to-r shadow-sm transition-colors",
+                "bg-purple-100 text-purple-700",
+                "dark:",
+                "bg-purple-500/10 text-purple-400"
+              )}
+            >
+              <Film className="w-5 h-5" />
+            </div>
+            <h3 className="text-xl font-semibold mb-2">Video Editing</h3>
+          </div>
+          <p className="text-muted-foreground mb-4">
+            Master the art of cutting, motion graphics, and delivery in Premiere Pro & After Effects.
+          </p>
+          <Link href="courses/video-editing">
             <Button variant="outline">Learn More</Button>
           </Link>
         </div>

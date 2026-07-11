@@ -66,7 +66,7 @@ export default function TrustedAcademySection({
             {" "}
             Digital Marketing
           </span>
-          , or <span className="text-foreground font-medium">UI/UX Design</span>
+          , or <span className="text-foreground font-medium">Video Editing</span>
           , our courses are taught by professionals who bridge theory with
           real-world practice.
         </p>

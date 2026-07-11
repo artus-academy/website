@@ -2,6 +2,8 @@ import { LucideIcon } from "lucide-react";
 import { Mentor } from "./mentors";
 import { webDevelopment } from "./course-web-development";
 import { digitalMarketing } from "./course-digital-marketing";
+import { videoEditing } from "./course-video-editing";
+
 
 export type Course = {
   id: string;
@@ -55,4 +57,6 @@ export type Syllabus = {
 export const courses = {
   webDevelopment,
   digitalMarketing,
+  videoEditing,
 };
+

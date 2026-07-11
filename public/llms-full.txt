@@ -61,6 +61,24 @@ We train students through hands-on projects, personalized career development, an
 
 ---
 
+### C. Video Editing Foundations Course
+- **Duration**: 3 Months
+- **Primary Tools & Tech**: Adobe Premiere Pro, After Effects, Media Encoder, Lumetri Colour, Dynamic Link, Essential Sound, Essential Graphics.
+- **Outcomes**: Edit raw footage, design motion graphics/VFX, perform color grading & sound mixing, and build a client portfolio.
+
+#### Month-by-Month Syllabus:
+- **Month 1: Premiere Pro Foundations**
+  - Topics: Workspace/sequence settings, importing media, editing tools (ripple, trim, razor), three-point editing, audio mixing, Lumetri color/LUTs, transitions, exporting formats.
+  - Projects: 60-second short film edit.
+- **Month 2: After Effects Foundations**
+  - Topics: Compositions, layers (video, shape, null, text), keyframes, Graph Editor, easing, text animators, shape animation (trim paths), chroma key, masking/mattes.
+  - Projects: Animated intro sequence.
+- **Month 3: Integration & Real-World Projects**
+  - Topics: Dynamic Link workflow, proxy workflow, vertical social video optimization (Reels/Shorts), commercial video scripting/pacing, color grading, sound design, portfolio and freelance tips.
+  - Projects: 90-second branded video & portfolio assembly.
+
+---
+
 ## 3. Leadership & Mentors
 
 ### Nikhil (Co-Founder & Web Development Mentor)
@@ -72,6 +90,12 @@ We train students through hands-on projects, personalized career development, an
 - Digital Marketing Strategist with extensive experience.
 - Leads the Digital Marketing curriculum.
 - Specializes in brand positioning, SEO, social media growth, and paid campaigns.
+
+### Sidhique P A (Video Editing Mentor)
+- Creative video editor & motion graphics specialist with 3+ years of experience.
+- Leads the Video Editing Foundations curriculum.
+- Specializes in cinematic editing, vertical social edits (reels), sound design, and After Effects visual effects.
+- Completed 350+ videos for over 50+ brands.
 
 ---
 

@@ -30,6 +30,7 @@ import {
   Megaphone,
   Menu,
   Rss,
+  Film,
 } from "lucide-react";
 import { Accordion } from "./ui/accordion";
 import {
@@ -75,6 +76,13 @@ const links: Link[] = [
         href: "/courses/digital-marketing",
         description:
           "Learn how to market a product to success! Learn different tools of SEO, PPC and other strategies and become a professional digital marketer.",
+      },
+      {
+        label: "Video Editing",
+        icon: <Film className="size-10 text-primary" />,
+        href: "/courses/video-editing",
+        description:
+          "Master the art of cutting, motion graphics, and delivery. Learn professional editing workflows in Adobe Premiere Pro and After Effects.",
       },
     ],
   },

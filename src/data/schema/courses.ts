@@ -1,5 +1,6 @@
 import { digitalMarketing } from "@/data/course-digital-marketing";
 import { webDevelopment } from "@/data/course-web-development";
+import { videoEditing } from "@/data/course-video-editing";
 
 export const fullStackCourseSchema = {
   "@context": "https://schema.org",
@@ -46,3 +47,27 @@ export const digitalMarketingCourseSchema = {
     },
   },
 };
+
+export const videoEditingCourseSchema = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  name: videoEditing.title,
+  provider: {
+    "@type": "Organization",
+    name: "ArtUs Academy",
+    url: "https://artusacademy.com",
+  },
+  description: videoEditing.description,
+  timeRequired: "P3M",
+  hasCourseInstance: {
+    "@type": "CourseInstance",
+    courseMode: ["online", "offline"],
+    location: {
+      "@type": "Place",
+      name: "ArtUs Academy, Kochi",
+      address:
+        "3rd Floor, SF Arcade Building, Kunnumpuram, Kakkanad, Kochi, Kerala - 682030",
+    },
+  },
+};
+

@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { nikhil } from "./mentor-nikhil";
 import { ajeena } from "./mentor-ajeena";
+import { sidhique } from "./mentor-sidhique";
 
 export type Mentor = {
   name: string;
@@ -15,4 +16,6 @@ export type Mentor = {
 export const mentors = {
   nikhil,
   ajeena,
+  sidhique,
 };
+

@@ -29,3 +29,15 @@ export const ajeenaPersonSchema = {
     "https://www.linkedin.com/in/ajeena-ali-ba3884137",
   ],
 };
+
+export const sidhiquePersonSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Sidhique P A",
+  jobTitle: "Senior Videographer and video editor",
+  worksFor: {
+    "@type": "Organization",
+    name: "ArtUs Academy",
+  },
+  sameAs: ["https://sidhique-visual-alchemy.lovable.app/"],
+};

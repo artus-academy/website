@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Code2, Rocket } from "lucide-react";
+import { Code2, Rocket, Film } from "lucide-react";
 import { ApplyNowDialog } from "@/components/ApplyNowDialog";
 import Link from "next/link";
 
@@ -34,6 +34,19 @@ const courses = [
     border: "border-pink-400/30 dark:border-pink-500/30",
     badgeLight: "bg-pink-100 text-pink-700",
     badgeDark: "bg-pink-500/10 text-pink-400",
+  },
+  {
+    id: "video-editing",
+    title: "Video Editing",
+    subtitle: "Master the art of cutting, motion graphics, and delivery",
+    description:
+      "Learn to edit, composite, and design high-impact videos. Master Adobe Premiere Pro and After Effects using dynamic integration, motion graphics, color grading, and audio workflows.",
+    icon: Film,
+    lightGradient: "from-purple-400/10 via-pink-300/10 to-transparent",
+    darkGradient: "from-purple-500/20 via-pink-500/10 to-transparent",
+    border: "border-purple-400/30 dark:border-purple-500/30",
+    badgeLight: "bg-purple-100 text-purple-700",
+    badgeDark: "bg-purple-500/10 text-purple-400",
   },
 ];
 
@@ -79,7 +92,7 @@ export default function CoursesSection() {
       </motion.div>
 
       {/* Courses Grid */}
-      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl">
+      <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl">
         {courses.map((course, i) => {
           const Icon = course.icon;
           return (

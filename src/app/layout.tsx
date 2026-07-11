@@ -11,7 +11,7 @@ import SiteLoader from "@/components/SiteLoader";
 import { StructuredData } from "@/components/StructuredData";
 import { organizationSchema } from "@/data/schema/organisation";
 import { localBusinessSchema } from "@/data/schema/localBusiness";
-import { ajeenaPersonSchema, nikhilPersonSchema } from "@/data/schema/mentors";
+import { ajeenaPersonSchema, nikhilPersonSchema, sidhiquePersonSchema } from "@/data/schema/mentors";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,16 +28,20 @@ export const metadata: Metadata = {
   authors: [{ name: "ArtUs Academy", url: "https://artusacademy.com" }],
   title: {
     default:
-      "ArtUs Academy - Web Development & Digital Marketing Courses in Kochi",
+      "ArtUs Academy - Web Dev, Digital Marketing & Video Editing Courses in Kochi",
     template: "%s • ArtUs Academy",
   },
   description:
-    "Industry-ready Web Development and Digital Marketing courses in Kochi with real project training, expert mentorship, and job placement support.",
+    "Industry-ready Web Development, Digital Marketing, and Video Editing courses in Kochi with real project training, expert mentorship, and job placement support.",
   keywords: [
     "ArtUs Academy",
     "Learn Web development",
     "Web Development Course Kochi",
     "Digital Marketing Course Kochi",
+    "Video Editing Course Kochi",
+    "Video Editing Training Kochi",
+    "Adobe Premiere Pro & After Effects Course Kochi",
+    "Best Video Editing Institute Kochi",
     "Full Stack Developer Training Kerala",
     "Digital Marketing Institute Kerala",
     "Coding Bootcamp Kochi",
@@ -51,14 +55,14 @@ export const metadata: Metadata = {
     siteName: "ArtUs Academy",
     title: "ArtUs Academy - Learn by Building",
     description:
-      "Learn Web Development and Digital Marketing through real-world projects, expert mentors, and job-ready training in Kochi.",
+      "Learn Web Development, Digital Marketing, and Video Editing through real-world projects, expert mentors, and job-ready training in Kochi.",
     images: [{ url: "/images/banner.png" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "ArtUs Academy",
     description:
-      "Web Dev + Digital Marketing, taught by pros. Learn by building.",
+      "Web Dev, Digital Marketing, and Video Editing taught by pros. Learn by building.",
     images: [{ url: "/images/banner.png" }],
   },
   icons: { icon: "/favicon.ico" },
@@ -96,6 +100,7 @@ export default function RootLayout({
         <StructuredData data={localBusinessSchema} />
         <StructuredData data={nikhilPersonSchema} />
         <StructuredData data={ajeenaPersonSchema} />
+        <StructuredData data={sidhiquePersonSchema} />
       </body>
     </html>
   );

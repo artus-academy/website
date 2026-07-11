@@ -1,7 +1,7 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
-import { Code2, Rocket } from "lucide-react";
+import { Code2, Rocket, Film } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export function WebDevelopmentBadge({ className }: { className?: string }) {
@@ -33,3 +33,19 @@ export function DigitalMarketingBadge({ className }: { className?: string }) {
     </Badge>
   );
 }
+
+export function VideoEditingBadge({ className }: { className?: string }) {
+  return (
+    <Badge
+      variant="outline"
+      className={cn(
+        "inline-flex items-center gap-1.5 rounded-full border border-purple-500/40 bg-gradient-to-r from-purple-500/10 to-indigo-500/10 text-purple-600 dark:text-purple-400 hover:from-purple-500/20 hover:to-indigo-500/20 transition-colors duration-300",
+        className
+      )}
+    >
+      <Film className="h-3.5 w-3.5" />
+      Video Editing
+    </Badge>
+  );
+}
+
